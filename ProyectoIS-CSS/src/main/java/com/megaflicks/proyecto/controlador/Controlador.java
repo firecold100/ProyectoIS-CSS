@@ -6,7 +6,8 @@
 package com.megaflicks.proyecto.controlador;
 
 
-
+import com.megaflicks.proyecto.mapeobd.Usuario;
+import com.megaflicks.proyecto.modelo.UsuarioDAO;
 import java.util.Date;
 import java.util.List;
 import javax.servlet.http.HttpServletRequest;
@@ -20,7 +21,7 @@ import org.springframework.web.servlet.ModelAndView;
 /**
  *
  * @author hectorsama
- */
+ 
 @Controller
 public class Controlador {
     
@@ -29,17 +30,27 @@ public class Controlador {
         return "profile"; 
     
     }
+     */
     
     
-  /*      /*Injectamos el modelo del marcador se autoinicializa*/
+     /*Injectamos el modelo del usuario se autoinicializa*/
     
         /**
-     * Regresa la pagina principal con los marcadores de la base de datos
+     * Regresa la pagina principal con los usuarios de la base de datos
      * @param model 
      * @return regresa el modelo 
      */
-    
-  /*  @RequestMapping(value="/register", method = RequestMethod.POST)   
+@Controller
+public class Controlador {
+     @Autowired
+    private UsuarioDAO usuario_bd;
+     
+     
+            
+
+     
+     
+    @RequestMapping(value="/register", method = RequestMethod.POST)   
     public String guardarUsuario(HttpServletRequest request){
     String alias=request.getParameter("alias");
     String nombre=request.getParameter("nombre");
@@ -47,8 +58,10 @@ public class Controlador {
     String apellido_p=request.getParameter("apellido_p");
     String apellido_m =request.getParameter("apellido_m");
     String contrasenya=request.getParameter("contrasenya");
-    Usuario u=usuario_db.getUsuario(correo);
-    
+    int sexo = Integer.parseInt("sexo");
+    String edad =  request.getParameter("edad");        
+    Usuario u=usuario_bd.getUsuario(correo);
+
     if(u==null){
     u= new Usuario();
     u.setAlias(alias);
@@ -57,8 +70,33 @@ public class Controlador {
     u.setApellido_m(apellido_m);
     u.setContrasenya(contrasenya);
     u.setCorreo(correo);
-    usuario_db.guardar(u);
+    u.setSexo(sexo);
+    u.setEdad(89);
+    usuario_bd.guardar(u);
     }
-    return "profile";
-    }*/
+    return "login";
+    }
+    
+
+     
+      @RequestMapping(value="/", method = RequestMethod.GET)
+    public String inicio(){
+    return "register";
+    }
+    
+    @RequestMapping(value="/inicioregister", method = RequestMethod.GET)
+    public ModelAndView usuario(ModelMap model){
+        List<Usuario> user = usuario_bd.getUsuarios();
+          
+        model.addAttribute("usuarios", user);
+        
+        return new ModelAndView("register",model);
+    
+     
+    }
+   @RequestMapping(value="/registro", method = RequestMethod.POST)
+    public String registrar(){
+        return "register";   
+    }
+   
 }
