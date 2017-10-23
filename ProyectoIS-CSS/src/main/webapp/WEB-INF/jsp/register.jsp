@@ -47,11 +47,20 @@
 							</div>
 						</div>
                                             <div class="form-group">
-							<label for="name" class="cols-sm-2 control-label">Apellidos</label>
+							<label for="name" class="cols-sm-2 control-label">Apellidos paterno</label>
 							<div class="cols-sm-10">
 								<div class="input-group">
 									<span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
-									<input type="text" class="form-control" name="apellido_p" id="name"  placeholder="Apellidos"/>
+                                                                        <input type="text" class="form-control" name="apellido_p" id="apellido_p"  placeholder="Apellido Paterno"/>
+								</div>
+							</div>
+						</div>
+                                         <div class="form-group">
+							<label for="name" class="cols-sm-2 control-label">Apellidos Materno</label>
+							<div class="cols-sm-10">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
+									<input type="text" class="form-control" name="apellido_m" id="apellido_m"  placeholder="Apellido Materno"/>
 								</div>
 							</div>
 						</div>
@@ -61,7 +70,7 @@
 							<div class="cols-sm-10">
 								<div class="input-group">
 									<span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
-									<input type="text" class="form-control" name="email" id="email"  placeholder="Enter your Email"/>
+									<input type="text" class="form-control" name="email" id="correo"  placeholder="Enter your Email"/>
 								</div>
 							</div>
 						</div>
@@ -71,11 +80,11 @@
 							<div class="cols-sm-10">
 								<div class="input-group">
 									<span class="input-group-addon"><i class="fa fa-users fa" aria-hidden="true"></i></span>
-									<input type="text" class="form-control" name="alias" id="username"  placeholder="Enter your Username"/>
+									<input type="text" class="form-control" name="alias" id="alias"  placeholder="Enter your Username"/>
 								</div>
 							</div>
 						</div>
-                                            <div class="form-group">
+                                        <!--    <div class="form-group">
                                                 <label for="username" class="cols-sm-2 control-label">Sexo</label>
                                                 <div class="form-check form-check-inline">
                                                 <label class="form-check-label">
@@ -84,6 +93,7 @@
                                               </div>
                                    
                                             </div>
+                                        -->
                                                 
                                             
                                         
@@ -92,7 +102,7 @@
 							<div class="cols-sm-10">
 								<div class="input-group">
 									<span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
-									<input type="password" class="form-control" name="password" id="password"  placeholder="Enter your Password"/>
+									<input type="password" class="form-control" name="password" id="contrasenya"  placeholder="Enter your Password"/>
 								</div>
 							</div>
 						</div>

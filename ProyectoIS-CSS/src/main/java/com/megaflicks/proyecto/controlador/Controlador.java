@@ -7,7 +7,7 @@ package com.megaflicks.proyecto.controlador;
 
 import com.megaflicks.proyecto.mapeobd.Usuario;
 import com.megaflicks.proyecto.modelo.UsuarioDAO;
-import java.util.Date;
+//import java.util.Date;
 import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -38,33 +38,23 @@ import org.springframework.web.servlet.ModelAndView;
 public class Controlador {
 
     @Autowired
-    private UsuarioDAO usuario_bd;
+    UsuarioDAO usuario_bd;
 
     @RequestMapping(value = "/register", method = RequestMethod.POST)
     public String guardarUsuario(HttpServletRequest request) {
         String alias = request.getParameter("alias");
+        String contrasenya = request.getParameter("contrasenya");
         String nombre = request.getParameter("nombre");
-        String correo = request.getParameter("correo");
         String apellido_p = request.getParameter("apellido_p");
         String apellido_m = request.getParameter("apellido_m");
-        String contrasenya = request.getParameter("contrasenya");
-        int sexo = Integer.parseInt("sexo");
-        String edad = request.getParameter("edad");
+        String correo = request.getParameter("correo");
+        //String sexo = request.getParameter("sexo");
         Usuario u = usuario_bd.getUsuario(correo);
-
         if (u == null) {
-            u = new Usuario();
-            u.setAlias(alias);
-            u.setNombre(nombre);
-            u.setApellido_p(apellido_p);
-            u.setApellido_m(apellido_m);
-            u.setContrasenya(contrasenya);
-            u.setCorreo(correo);
-            u.setSexo(sexo);
-            u.setEdad(89);
+            u = new Usuario(alias,contrasenya,nombre,apellido_p,apellido_m,correo);
             usuario_bd.guardar(u);
         }
-        return "login";
+        return "redirect:/login";
     }
 
     @RequestMapping(value = "/", method = RequestMethod.GET)
