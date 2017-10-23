@@ -5,7 +5,6 @@
  */
 package com.megaflicks.proyecto.controlador;
 
-
 import com.megaflicks.proyecto.mapeobd.Usuario;
 import com.megaflicks.proyecto.modelo.UsuarioDAO;
 import java.util.Date;
@@ -21,82 +20,71 @@ import org.springframework.web.servlet.ModelAndView;
 /**
  *
  * @author hectorsama
- 
+ *
+ * @Controller public class Controlador {
+ *
+ * @RequestMapping(value="/", method = RequestMethod.GET) public String
+ * usuario(ModelMap model){ return "profile";  *
+ * }
+ */
+/*Injectamos el modelo del usuario se autoinicializa*/
+/**
+ * Regresa la pagina principal con los usuarios de la base de datos
+ *
+ * @param model
+ * @return regresa el modelo
+ */
 @Controller
 public class Controlador {
-    
-     @RequestMapping(value="/", method = RequestMethod.GET)
-    public String usuario(ModelMap model){
-        return "profile"; 
-    
-    }
-     */
-    
-    
-     /*Injectamos el modelo del usuario se autoinicializa*/
-    
-        /**
-     * Regresa la pagina principal con los usuarios de la base de datos
-     * @param model 
-     * @return regresa el modelo 
-     */
-@Controller
-public class Controlador {
-     @Autowired
+
+    @Autowired
     private UsuarioDAO usuario_bd;
-     
-     
-            
 
-     
-     
-    @RequestMapping(value="/register", method = RequestMethod.POST)   
-    public String guardarUsuario(HttpServletRequest request){
-    String alias=request.getParameter("alias");
-    String nombre=request.getParameter("nombre");
-    String correo=request.getParameter("correo");
-    String apellido_p=request.getParameter("apellido_p");
-    String apellido_m =request.getParameter("apellido_m");
-    String contrasenya=request.getParameter("contrasenya");
-    int sexo = Integer.parseInt("sexo");
-    String edad =  request.getParameter("edad");        
-    Usuario u=usuario_bd.getUsuario(correo);
+    @RequestMapping(value = "/register", method = RequestMethod.POST)
+    public String guardarUsuario(HttpServletRequest request) {
+        String alias = request.getParameter("alias");
+        String nombre = request.getParameter("nombre");
+        String correo = request.getParameter("correo");
+        String apellido_p = request.getParameter("apellido_p");
+        String apellido_m = request.getParameter("apellido_m");
+        String contrasenya = request.getParameter("contrasenya");
+        int sexo = Integer.parseInt("sexo");
+        String edad = request.getParameter("edad");
+        Usuario u = usuario_bd.getUsuario(correo);
 
-    if(u==null){
-    u= new Usuario();
-    u.setAlias(alias);
-    u.setNombre(nombre);
-    u.setApellido_p(apellido_p);
-    u.setApellido_m(apellido_m);
-    u.setContrasenya(contrasenya);
-    u.setCorreo(correo);
-    u.setSexo(sexo);
-    u.setEdad(89);
-    usuario_bd.guardar(u);
+        if (u == null) {
+            u = new Usuario();
+            u.setAlias(alias);
+            u.setNombre(nombre);
+            u.setApellido_p(apellido_p);
+            u.setApellido_m(apellido_m);
+            u.setContrasenya(contrasenya);
+            u.setCorreo(correo);
+            u.setSexo(sexo);
+            u.setEdad(89);
+            usuario_bd.guardar(u);
+        }
+        return "login";
     }
-    return "login";
-    }
-    
 
-     
-      @RequestMapping(value="/", method = RequestMethod.GET)
-    public String inicio(){
-    return "register";
+    @RequestMapping(value = "/", method = RequestMethod.GET)
+    public String inicio() {
+        return "register";
     }
-    
-    @RequestMapping(value="/inicioregister", method = RequestMethod.GET)
-    public ModelAndView usuario(ModelMap model){
+
+    @RequestMapping(value = "/inicioregister", method = RequestMethod.GET)
+    public ModelAndView usuario(ModelMap model) {
         List<Usuario> user = usuario_bd.getUsuarios();
-          
+
         model.addAttribute("usuarios", user);
-        
-        return new ModelAndView("register",model);
-    
-     
+
+        return new ModelAndView("register", model);
+
     }
-   @RequestMapping(value="/registro", method = RequestMethod.POST)
-    public String registrar(){
-        return "register";   
+
+    @RequestMapping(value = "/registro", method = RequestMethod.POST)
+    public String registrar() {
+        return "register";
     }
-   
+
 }

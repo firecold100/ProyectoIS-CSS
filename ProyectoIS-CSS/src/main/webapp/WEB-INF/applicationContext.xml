@@ -4,20 +4,20 @@
        xmlns:p="http://www.springframework.org/schema/p"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
                            http://www.springframework.org/schema/beans/spring-beans-4.3.xsd" >
-      <!-- Se especifica la ruta del archivo que tendra los datos de la conexión a la BD,
-         en este caso el archivo se llama database.properties y se encuentra dentro de 
-         la carpeta WEB-INF -->
+    <!-- Se especifica la ruta del archivo que tendra los datos de la conexión a la BD,
+    en este caso el archivo se llama database.properties y se encuentra dentro de 
+    la carpeta WEB-INF -->
     <bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer"
-        p:location="/WEB-INF/database.properties"/>
+          p:location="/WEB-INF/database.properties"/>
 
     <!--  Bean que realiza la conexión a la BD usando la informacion de database.properties-->
     <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource"
-        p:driverClassName="${jdbc.driverClassName}"
-        p:url="${jdbc.url}"
-        p:username="${jdbc.username}"
-        p:password="${jdbc.password}"/>
+          p:driverClassName="${jdbc.driverClassName}"
+          p:url="${jdbc.url}"
+          p:username="${jdbc.username}"
+          p:password="${jdbc.password}"/>
      
-   <bean id="hibernate4AnnotatedSessionFactory"
+    <bean id="hibernate4AnnotatedSessionFactory"
           class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
         <property name="dataSource" ref="dataSource"/>
         <property name="annotatedClasses">
@@ -36,7 +36,7 @@
     </bean>
     
     <!--  Se agrega para poder inyectarlo a los Controladores, revisa EjemploController.java
-          en el paquete controlador, se esta haciendo uso de @Autowired-->
+    en el paquete controlador, se esta haciendo uso de @Autowired-->
     <!--Ejemplo para configurar bean-->
     
     
