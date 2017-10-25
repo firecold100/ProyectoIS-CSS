@@ -75,7 +75,7 @@ public class Controlador {
    
     usuario_bd.guardar(u);
     }
-    return "profile";
+    return "login";
     }
     
     
@@ -105,7 +105,7 @@ public class Controlador {
     }
    @RequestMapping(value="/registro", method = RequestMethod.POST)
     public String registrar(){
-        return "register";   
+        return "login";   
     }
    
 }
