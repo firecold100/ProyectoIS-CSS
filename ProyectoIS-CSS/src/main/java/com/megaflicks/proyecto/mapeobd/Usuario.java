@@ -28,8 +28,6 @@ public class Usuario {
  private int ID_USUARIO;
  @Column (name="alias")
  private String alias;
- @Column (name="contrasenya")
- private String contrasenya;    
  @Column (name="nombre")
  private String nombre;
  @Column (name="apellido_p")
@@ -41,19 +39,9 @@ public class Usuario {
  @Column (name="f_reg")
  private Date f_reg;
  @Column(name="sexo")
- private int sexo;
+ private String  sexo;
  @Column(name="edad")
- private int edad;
-
-    public Usuario(String alias, String contrasenya, String nombre, String apellido_p, String apellido_m, String correo) {
-        this.alias = alias;
-        this.contrasenya = contrasenya;
-        this.nombre = nombre;
-        this.apellido_p = apellido_p;
-        this.apellido_m = apellido_m;
-        this.correo = correo;
-    }
- 
+ private String edad;
 
     public int getID_USUARIO() {
         return ID_USUARIO;
@@ -62,7 +50,8 @@ public class Usuario {
     public void setID_USUARIO(int ID_USUARIO) {
         this.ID_USUARIO = ID_USUARIO;
     }
- 
+ @Column (name="contrasenya")
+ private String contrasenya;    
 
     public String getCorreo() {
         return correo;
@@ -116,19 +105,19 @@ public class Usuario {
         this.f_reg = f_reg;
     }
 
-    public int getSexo() {
+    public String getSexo() {
         return sexo;
     }
 
-    public void setSexo(int sexo) {
+    public void setSexo(String sexo) {
         this.sexo = sexo;
     }
 
-    public int getEdad() {
+    public String getEdad() {
         return edad;
     }
 
-    public void setEdad(int edad) {
+    public void setEdad(String edad) {
         this.edad = edad;
     }
 
