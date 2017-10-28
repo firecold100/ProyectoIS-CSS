@@ -39,7 +39,7 @@
                 <div class="row main">
                     <div class="main-login main-center">
                         <h5>Registrarse</h5>
-                        <form action="/registrar" method="POST">
+                        <form action="/ProyectoIS-CSS/registrar" method="GET">
                             <!--<form class="" method="post" action="#">-->
 
                             <div class="form-group">

@@ -53,7 +53,7 @@
                 </div>
                 <button class="btn btn-lg btn-primary" id="Login" type="submit">Login</button>
             </form><!-- /form -->
-            <form action="/ProyectoIS-CSS/registro" method="post">
+            <form action="/ProyectoIS-CSS/registro" method="get">
                  <button class="btn btn-lg btn-primary" type="submit">Registrarse (si no tiene una cuenta)</button>
             </form>
             
