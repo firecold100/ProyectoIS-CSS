@@ -62,8 +62,6 @@ public class Usuario {
         this.correo = correo;
     }
 
-
-
     public String getAlias() {
         return alias;
     }

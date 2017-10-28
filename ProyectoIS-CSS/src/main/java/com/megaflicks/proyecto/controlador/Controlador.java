@@ -55,9 +55,8 @@ public class Controlador {
     String apellido_m =request.getParameter("apellido_m");
     String contrasenya=request.getParameter("contrasenya");
     //String sexo = request.getParameter("sexo");
-    
-    Usuario u=usuario_bd.getUsuario(correo);
-
+    Usuario u = null;
+    //u=usuario_bd.getUsuario(correo);
     if(u==null){
     u= new Usuario();
     u.setAlias(alias);
