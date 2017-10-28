@@ -44,7 +44,7 @@
                 <span id="reauth-email" class="reauth-email"></span>
                 <p class="input_title">Email</p>
                 <input type="text" id="inputEmail" class="login_box" placeholder="user01@IceCode.com" required autofocus>
-                <p class="input_title">Password</p>
+                <p class="input_title">Contraseña</p>
                 <input type="password" id="inputPassword" class="login_box" placeholder="******" required>
                 <div id="remember" class="checkbox">
                     <label>
@@ -53,6 +53,8 @@
                 </div>
                 <button class="btn btn-lg btn-primary" type="submit">Login</button>
             </form><!-- /form -->
+            <button class="btn btn-lg btn-primary" type="submit">Registrarse (si no tiene una cuenta)</button>
+           
         </div><!-- /card-container -->
     </div><!-- /container -->
             

@@ -46,11 +46,6 @@ public class Controlador {
      @Autowired
     private UsuarioDAO usuario_bd;
      
-     
-            
-
-     
-     
     @RequestMapping(value="/register", method = RequestMethod.POST)   
     public String guardarUsuario(HttpServletRequest request){
     String alias=request.getParameter("alias");
@@ -87,12 +82,15 @@ public class Controlador {
     }
     
 
-     
-      @RequestMapping(value="/", method = RequestMethod.GET)
+     //punto de inicio de la aplicación en general
+    @RequestMapping(value="/", method = RequestMethod.GET)
     public String inicio(){
+    return "login";
+    }
+    @RequestMapping(value="/registro", method = RequestMethod.GET)
+    public String registro(){
     return "register";
     }
-    
     @RequestMapping(value="/inicioregister", method = RequestMethod.GET)
     public ModelAndView usuario(ModelMap model){
         List<Usuario> user = usuario_bd.getUsuarios();
@@ -100,12 +98,7 @@ public class Controlador {
         model.addAttribute("usuarios", user);
         
         return new ModelAndView("register",model);
-    
-     
     }
-   @RequestMapping(value="/registro", method = RequestMethod.POST)
-    public String registrar(){
-        return "login";   
-    }
+  
    
 }
