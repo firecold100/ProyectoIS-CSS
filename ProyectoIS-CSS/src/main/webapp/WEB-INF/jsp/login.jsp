@@ -35,14 +35,14 @@
     <script>try{Typekit.load({ async: true });}catch(e){}</script>
 
     <div class="container">
-    <h1 class="welcome text-center">Welcome to <br> Ice Code</h1>
+    <h1 class="welcome text-center">GustosCulposos<br> Donde lo que te avergüenza, te conecta.</h1>
         <div class="card card-container">
-        <h2 class='login_title text-center'>Login</h2>
+        <h2 class='login_title text-center'>Ingresa</h2>
         <hr>
 
             <form class="form-signin">
                 <span id="reauth-email" class="reauth-email"></span>
-                <p class="input_title">Email</p>
+                <p class="input_title">Correo</p>
                 <input type="text" id="inputEmail" class="login_box" placeholder="user01@IceCode.com" required autofocus>
                 <p class="input_title">Contraseña</p>
                 <input type="password" id="inputPassword" class="login_box" placeholder="******" required>
@@ -51,9 +51,12 @@
                         
                     </label>
                 </div>
-                <button class="btn btn-lg btn-primary" type="submit">Login</button>
+                <button class="btn btn-lg btn-primary" id="Login" type="submit">Login</button>
             </form><!-- /form -->
-            <button class="btn btn-lg btn-primary" type="submit">Registrarse (si no tiene una cuenta)</button>
+            <form action="/ProyectoIS-CSS/registro" method="post">
+                 <button class="btn btn-lg btn-primary" type="submit">Registrarse (si no tiene una cuenta)</button>
+            </form>
+            
            
         </div><!-- /card-container -->
     </div><!-- /container -->

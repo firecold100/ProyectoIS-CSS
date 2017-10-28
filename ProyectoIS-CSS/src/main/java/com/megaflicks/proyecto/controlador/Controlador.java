@@ -46,7 +46,7 @@ public class Controlador {
      @Autowired
     private UsuarioDAO usuario_bd;
      
-    @RequestMapping(value="/register", method = RequestMethod.POST)   
+    @RequestMapping(value="/registrar", method = RequestMethod.GET)   
     public String guardarUsuario(HttpServletRequest request){
     String alias=request.getParameter("alias");
     String nombre=request.getParameter("nombre");
@@ -54,7 +54,7 @@ public class Controlador {
     String apellido_p=request.getParameter("apellido_p");
     String apellido_m =request.getParameter("apellido_m");
     String contrasenya=request.getParameter("contrasenya");
-    String sexo = request.getParameter("sexo");
+    //String sexo = request.getParameter("sexo");
     
     Usuario u=usuario_bd.getUsuario(correo);
 
@@ -66,7 +66,7 @@ public class Controlador {
     u.setApellido_m(apellido_m);
     u.setContrasenya(contrasenya);
     u.setCorreo(correo);
-    u.setSexo(sexo);
+    //u.setSexo(sexo);
    
     usuario_bd.guardar(u);
     }
@@ -88,7 +88,11 @@ public class Controlador {
     return "login";
     }
     @RequestMapping(value="/registro", method = RequestMethod.GET)
-    public String registro(){
+    public String registroGET(){
+    return "register";
+    }
+    @RequestMapping(value="/registro", method = RequestMethod.POST)
+    public String registroPOST(){
     return "register";
     }
     @RequestMapping(value="/inicioregister", method = RequestMethod.GET)

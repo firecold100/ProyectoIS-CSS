@@ -39,7 +39,7 @@
                 <div class="row main">
                     <div class="main-login main-center">
                         <h5>Registrarse</h5>
-                        <form action="/Proyecto/register" method="POST">
+                        <form action="/registrar" method="POST">
                             <!--<form class="" method="post" action="#">-->
 
                             <div class="form-group">
@@ -91,10 +91,9 @@
                             </div>
                             <div class="form-group">
                                 <label for="sel1">Sexo:</label>
-                                <select class="form-control" id="sel1" name="sexo">
+                                <select class="form-control" id="sexo" name="sexo">
                                     <option>Femenino</option>
                                     <option>Masculino</option>
-
                                 </select>
 
                             </div>
@@ -123,9 +122,6 @@
 
                             <div class="form-group ">
                                 <button id="button"  class="btn btn-primary btn-lg btn-block login-button">Registrate</button>
-
-
-
                             </div>
 
 
