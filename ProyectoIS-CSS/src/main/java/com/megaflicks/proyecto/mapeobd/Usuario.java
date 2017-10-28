@@ -42,7 +42,9 @@ public class Usuario {
  private String  sexo;
  @Column(name="edad")
  private String edad;
-
+ @Column (name="contrasenya")
+ private String contrasenya;    
+ 
     public int getID_USUARIO() {
         return ID_USUARIO;
     }
@@ -50,8 +52,7 @@ public class Usuario {
     public void setID_USUARIO(int ID_USUARIO) {
         this.ID_USUARIO = ID_USUARIO;
     }
- @Column (name="contrasenya")
- private String contrasenya;    
+
 
     public String getCorreo() {
         return correo;
@@ -94,8 +95,6 @@ public class Usuario {
     public void setApellido_m(String apellido_m) {
         this.apellido_m = apellido_m;
     }
-
-
 
     public Date getF_reg() {
         return f_reg;
