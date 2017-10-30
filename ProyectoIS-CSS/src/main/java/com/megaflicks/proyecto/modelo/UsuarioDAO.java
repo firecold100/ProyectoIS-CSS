@@ -114,7 +114,7 @@ public class UsuarioDAO {
         Transaction tx = null;
         try{
             tx = s.beginTransaction();
-            String hql = "FROM usuario WHERE correo = :correo";                  
+            String hql = "FROM Usuario WHERE correo = :correo";                  
             Query query = s.createQuery(hql);
             query.setParameter("correo",correo);
             result = (Usuario)query.uniqueResult();

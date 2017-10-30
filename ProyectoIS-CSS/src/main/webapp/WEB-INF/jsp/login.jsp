@@ -51,12 +51,14 @@
                         
                     </label>
                 </div>
-                <button class="btn btn-lg btn-primary" id="Login" type="submit">Login</button>
-            </form><!-- /form -->
-            <form action="/ProyectoIS-CSS/registro" method="get">
-                 <button class="btn btn-lg btn-primary" type="submit">Registrarse (si no tiene una cuenta)</button>
+                <button class="btn btn-primary btn-lg btn-block" id="Login" type="">Login</button>
+        </form><!-- /form -->
+            <form action="/ProyectoIS-CSS/registro" method="get" class="form-signin">
+                 <button class="btn btn-secondary btn-lg btn-block" type="submit">Registrarse (si no tiene una cuenta)</button>
             </form>
-            
+                    
+        
+
            
         </div><!-- /card-container -->
     </div><!-- /container -->
