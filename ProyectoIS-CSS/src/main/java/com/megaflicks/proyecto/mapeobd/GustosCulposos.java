@@ -23,20 +23,20 @@ public class GustosCulposos {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_gustos")
-    private int id_gustos;
+    @Column(name = "id_gusto")
+    private int id_gusto;
     @Column(name = "gusto")
     private String Gusto;
-    @ManyToOne
+    //@ManyToOne
     @JoinColumn(name = "ID_USUARIO")
     private Usuario ID_USUARIO;
 
-    public int getId_gustos() {
-        return id_gustos;
+    public int getId_gusto() {
+        return id_gusto;
     }
 
-    public void setId_gustos(int id_gustos) {
-        this.id_gustos = id_gustos;
+    public void setId_gusto(int id_gusto) {
+        this.id_gusto = id_gusto;
     }
 
     public String getGusto() {
@@ -50,9 +50,4 @@ public class GustosCulposos {
     public Usuario getID_USUARIO() {
         return ID_USUARIO;
     }
-
-    public void setID_USUARIO(Usuario ID_USUARIO) {
-        this.ID_USUARIO = ID_USUARIO;
-    }
-
 }
