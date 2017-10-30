@@ -24,7 +24,6 @@
             <list>
            
                 <value>com.megaflicks.proyecto.mapeobd.Usuario</value>
-                <value>com.megaflicks.proyecto.mapeobd.GustosCulposos</value>
             </list>
         </property>
         <property name="hibernateProperties">
@@ -42,7 +41,6 @@
     
     
     <bean id="UsuarioDAO" class="com.megaflicks.proyecto.modelo.UsuarioDAO" p:sessionFactory-ref="hibernate4AnnotatedSessionFactory"/>
-    <bean id="UsuarioDAO" class="com.megaflicks.proyecto.modelo.GustosCulpososDAO" p:sessionFactory-ref="hibernate4AnnotatedSessionFactory"/>
     
 </beans>
 
