@@ -68,6 +68,7 @@ public class Controlador {
     u.setSexo(sexo);
    
     usuario_bd.guardar(u);
+    
     }
     return "login";
     }
