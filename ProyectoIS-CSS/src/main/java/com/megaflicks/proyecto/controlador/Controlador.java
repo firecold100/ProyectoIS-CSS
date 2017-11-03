@@ -86,12 +86,25 @@ public class Controlador {
     public String inicio(){
     return "login";
     }
+    
+    @RequestMapping(value="/ingresar", method = RequestMethod.POST)
+    public String ingresoGET(HttpServletRequest request){
+         String cred=request.getParameter("cred");
+         String contra=request.getParameter("contra");
+         Usuario u = usuario_bd.loginUsuario(cred, contra);
+         if(u != null) {
+             return "redirect:perfil";
+            }
+         return "login";
+    }
+    
+    @RequestMapping(value="/perfil", method = RequestMethod.GET)
+    public String ingresoPOST(){
+    return "profile";
+    }
+    
     @RequestMapping(value="/registro", method = RequestMethod.GET)
     public String registroGET(){
-    return "register";
-    }
-    @RequestMapping(value="/registro", method = RequestMethod.POST)
-    public String registroPOST(){
     return "register";
     }
     @RequestMapping(value="/inicioregister", method = RequestMethod.GET)

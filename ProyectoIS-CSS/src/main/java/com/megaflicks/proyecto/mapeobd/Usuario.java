@@ -45,6 +45,8 @@ public class Usuario {
  @Column (name="contrasenya")
  private String contrasenya;    
  
+ private String passwordConfirm;
+     
     public int getID_USUARIO() {
         return ID_USUARIO;
     }
@@ -126,6 +128,9 @@ public class Usuario {
         this.contrasenya = contrasenya;
     }
  
- 
-    
+
+    public void setPasswordConfirm(String passwordConfirm) {
+        this.passwordConfirm = passwordConfirm;
+    }
+
 }

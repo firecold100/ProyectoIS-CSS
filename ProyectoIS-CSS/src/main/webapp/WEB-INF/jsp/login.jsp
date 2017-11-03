@@ -40,12 +40,12 @@
         <h2 class='login_title text-center'>Ingresa</h2>
         <hr>
 
-            <form class="form-signin">
+            <form class="form-signin" action="${pageContext.request.contextPath}/ingresar" method="post" >
                 <span id="reauth-email" class="reauth-email"></span>
                 <p class="input_title">Correo</p>
-                <input type="text" id="inputEmail" class="login_box" placeholder="user01@IceCode.com" required autofocus>
+                <input type="text" id="cred" class="login_box" placeholder="user01@IceCode.com" required autofocus>
                 <p class="input_title">Contraseña</p>
-                <input type="password" id="inputPassword" class="login_box" placeholder="******" required>
+                <input type="password" id="contra" class="login_box" placeholder="******" required>
                 <div id="remember" class="checkbox">
                     <label>
                         
@@ -53,7 +53,7 @@
                 </div>
                 <button class="btn btn-primary btn-lg btn-block" id="Login" type="">Login</button>
         </form><!-- /form -->
-            <form action="/ProyectoIS-CSS/registro" method="get" class="form-signin">
+        <form action="${pageContext.request.contextPath}/registro" method="get" class="form-signin">
                  <button class="btn btn-secondary btn-lg btn-block" type="submit">Registrarse (si no tiene una cuenta)</button>
             </form>
                     

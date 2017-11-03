@@ -17,18 +17,18 @@ import org.hibernate.Transaction;
  * @author hectorsama
  */
 public class UsuarioDAO {
-     /*Sesion para conectarnos a la base de datos*/
+    /*Sesion para conectarnos a la base de datos*/
     private SessionFactory sessionFactory;
 
     public SessionFactory getSessionFactory() {
         return sessionFactory;
     }
     
-        public void setSessionFactory(SessionFactory sessionFactory) {
+    public void setSessionFactory(SessionFactory sessionFactory) {
         this.sessionFactory = sessionFactory;
     }
 
-        public void guardar(Usuario usuario) {
+    public void guardar(Usuario usuario) {
         //se inicia la sesion
         Session session = sessionFactory.openSession();
         //la transaccion a relizar
@@ -128,5 +128,34 @@ public class UsuarioDAO {
         }
         return result;
     }
+       
+     public Usuario loginUsuario(String correo, String contrasenya) {
+        correo.replace("'", "");
+        correo.replace("-", "");
+        correo.replace("/", "");
+        contrasenya.replace("'", "");
+        contrasenya.replace("-", "");
+        contrasenya.replace("/", "");
+        Usuario result = null;
+        Session s = sessionFactory.openSession();
+        Transaction tx = null;
+        try{
+            tx = s.beginTransaction();
+            String hql = "FROM Usuario WHERE correo = :correo AND  contrasenya = :contrasenya ";                  
+            Query query = s.createQuery(hql);
+            query.setParameter("correo",correo);
+            query.setParameter("contrasenya",contrasenya);
+            result = (Usuario)query.uniqueResult();
+            tx.commit();
+        }catch(Exception e){
+            if(tx != null)
+                tx.rollback();
+            e.printStackTrace();
+        }finally{
+            s.close();
+        }
+        return result;
+    }
+       
     
 }
