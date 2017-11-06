@@ -1,0 +1,33 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 04-nov-2017, 22:13:21
+    Author     : hectorsama
+*/
+
+.ds-btn li{ list-style:none; float:left; padding:10px; }
+.ds-btn li a span{padding-left:15px;padding-right:5px;width:100%;display:inline-block; text-align:left;}
+.ds-btn li a span small{width:100%; display:inline-block; text-align:left;}
+body {
+    background-image: url('luces.jpg');
+    background-size: 100%;
+    background-attachment: fixed;
+    
+}
+
+.titulo{
+    color: #cccccc;
+    
+}
+
+.container {
+            margin: 0 auto;
+            
+            width: 500px;
+            padding: 0;
+            position: relative;
+            text-align: center;
+}
