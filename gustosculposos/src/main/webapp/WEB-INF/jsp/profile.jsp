@@ -17,7 +17,7 @@
        
         <script type="text/javascript" src="<c:url value="/js/profile.js" />"> </script>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Profile</title>
+        <title>GustosCulposos</title>
     </head>
     
     <body>
@@ -30,7 +30,7 @@
   <a href="#"><i class="fa fa-telegram"></i></a>
 
  
-  <form action="/ProyectoIS-CSS/eliminarUsuario" method="get"  > 
+  <form action="${pageContext.request.contextPath}/eliminarUsuario" method="get"  > 
       <a  ><button id="button"  class="fa fa-trash"   > </button ></a>
       
   </form>
@@ -54,7 +54,7 @@
     		<img src="http://s9.postimg.org/ty7whgnnj/CYMERA_20150512_162628.Jpg" class="img-circle img-thumbnail">
                  <br /> <br /> 
     
-          <h3>HitendraZ</h2>
+          <h3>Bienvenido!  </h2>
         <h4 style="color:#A9ABA6">{ Web Designer }</h4>
 		</div>
   	</div>
