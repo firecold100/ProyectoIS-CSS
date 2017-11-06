@@ -39,7 +39,7 @@
             <div class="row main">
                 <div class="main-login main-center">
                     <h5>Tus gustos culposos son:</h5>
-                    <form action="/ProyectoIS-CSS/registrarGustos"  method="POST">
+                    <form action="${pageContext.request.contextPath}/registrarGustos"  method="POST">
                         <!--<form class="" method="post" action="#">-->
                         <input type="text" value="${correo } " name="correo" /> 
                         <div class="checkbox">

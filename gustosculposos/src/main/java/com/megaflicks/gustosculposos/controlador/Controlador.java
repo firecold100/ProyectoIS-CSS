@@ -52,7 +52,7 @@ public class Controlador {
     GustosCulpososDAO Gustos_db;
   
      
-    @RequestMapping(value="/registrar", method = RequestMethod.GET)   
+    @RequestMapping(value="/registrar", method = RequestMethod.POST)   
     public ModelAndView guardarUsuario(HttpServletRequest request, ModelMap model) {
     //System.out.println(request.getParameter("ID_USUARIO"));
 
