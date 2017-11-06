@@ -130,12 +130,12 @@ public class UsuarioDAO {
     }
        
      public Usuario loginUsuario(String correo, String contrasenya) {
-        correo.replace("'", "");
-        correo.replace("-", "");
-        correo.replace("/", "");
-        contrasenya.replace("'", "");
-        contrasenya.replace("-", "");
-        contrasenya.replace("/", "");
+        //correo.replace("'", "");
+        //correo.replace("-", "");
+        //correo.replace("/", "");
+        //contrasenya.replace("'", "");
+        //contrasenya.replace("-", "");
+        //contrasenya.replace("/", "");
         Usuario result = null;
         Session s = sessionFactory.openSession();
         Transaction tx = null;
@@ -156,6 +156,35 @@ public class UsuarioDAO {
         }
         return result;
     }
-       
+         public boolean loginUsuarioBoolean(String correo, String contrasenya) {
+        //correo.replace("'", "");
+        //correo.replace("-", "");
+        //correo.replace("/", "");
+        //contrasenya.replace("'", "");
+        //contrasenya.replace("-", "");
+        //contrasenya.replace("/", "");
+        boolean result = false;
+        Session s = sessionFactory.openSession();
+        Transaction tx = null;
+        try{
+            tx = s.beginTransaction();
+            String hql = "FROM Usuario WHERE correo = :correo AND  contrasenya = :contrasenya ";                  
+            Query query = s.createQuery(hql);
+            query.setParameter("correo",correo);
+            query.setParameter("contrasenya",contrasenya);
+            Usuario u = (Usuario)query.uniqueResult();
+            if(u.getCorreo().equalsIgnoreCase(correo))
+                result = true;
+            tx.commit();
+        }catch(Exception e){
+            if(tx != null)
+                tx.rollback();
+            e.printStackTrace();
+        }finally{
+            s.close();
+        }
+        return result;
+    }
+          
     
 }

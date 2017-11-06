@@ -51,7 +51,7 @@
                         
                     </label>
                 </div>
-                <button class="btn btn-primary btn-lg btn-block" id="Login" type="">Login</button>
+                <button class="btn btn-primary btn-lg btn-block" id="Login" type=""   >Login</button>
         </form><!-- /form -->
         <form action="${pageContext.request.contextPath}/registro" method="get" class="form-signin">
                  <button class="btn btn-secondary btn-lg btn-block" type="submit">Registrarse (si no tiene una cuenta)</button>
