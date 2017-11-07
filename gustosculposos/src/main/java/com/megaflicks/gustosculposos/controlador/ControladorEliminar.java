@@ -26,10 +26,9 @@ public class ControladorEliminar {
 
     @RequestMapping(value = "/eliminarUsuario", method = RequestMethod.GET)
     public String borrarUsuario(HttpServletRequest request, Principal principal) {
-        String id = principal.getName();
-        Usuario us = Usuario_db.getUsuario(id);
-        Usuario_db.eliminar(us);
-        return "login";
+    
+
+        return "eliminar";
 
     }
     

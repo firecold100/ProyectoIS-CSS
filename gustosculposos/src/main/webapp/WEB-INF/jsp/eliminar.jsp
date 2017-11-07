@@ -6,18 +6,28 @@
 --%>
 
 
+<%-- 
+    Document   : register
+    Created on : 16-oct-2017, 15:38:07
+    Author     : hectorsama
+--%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
-<html>
-    <head>
+
+<html lang="en">
+    <head> 
+        <link rel="stylesheet" type="text/css" href="<c:url value="/css/register.css"/> ">  
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link rel="stylesheet">
-        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-       <link rel="stylesheet" type="text/css" href="<c:url value="/css/eliminacion.css"/> ">
-        <title>Confirmacion de Eliminacion</title>
-    </head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/css/bootstrap.min.css" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+
+
+
     <body>
         <div class="container">
 	<div class="row">
@@ -40,5 +50,36 @@
     
 	</div>
 </div>
+
+
+
+
+        <!-- Website CSS style -->
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+
+        <!-- Website Font style -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+
+        <!-- Google Fonts -->
+        <link href='https://fonts.googleapis.com/css?family=Passion+One' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Oxygen' rel='stylesheet' type='text/css'>
+
+       
+
+        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <!-- Include all compiled plugins (below), or include individual files as needed -->
+        <script src="js/bootstrap.min.js"></script>
     </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
