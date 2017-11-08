@@ -84,7 +84,7 @@ public class Controlador {
      //punto de inicio de la aplicación en general
     @RequestMapping(value="/", method = RequestMethod.GET)
     public String inicio(){
-    return "login";
+    return "chat";
     }
     @RequestMapping(value="/registro", method = RequestMethod.GET)
     public String registroGET(){
