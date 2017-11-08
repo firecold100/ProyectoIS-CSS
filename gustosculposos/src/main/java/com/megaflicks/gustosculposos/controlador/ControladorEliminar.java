@@ -41,7 +41,7 @@ public class ControladorEliminar {
         @RequestMapping(value="/confirmacionElimina", method = RequestMethod.GET)
     public String confirmacion(HttpServletRequest request, Principal principal){
         
-        return "eliminar";
+        return "login";
 }
     
 }

@@ -6,6 +6,7 @@
 package com.megaflicks.gustosculposos.modelo;
 
 import com.megaflicks.gustosculposos.mapeobd.GustosCulposos;
+import com.megaflicks.gustosculposos.mapeobd.Usuario;
 import java.util.List;
 import org.hibernate.Query;
 import org.hibernate.Session;
@@ -114,14 +115,15 @@ public class GustosCulpososDAO {
      * Regresa la lista de todos los Gustos en la base de datos
      * @return la lista que contiene a todos los gustos de la base de datos
      */
-    public List<GustosCulposos> getGustos(){
+    public List<GustosCulposos> getGustos(Usuario u){
         List<GustosCulposos> result= null;
         Session session = sessionFactory.openSession();
         Transaction tx=null;
         try{
             tx=session.beginTransaction();
-            String hql= "FROM GustosCulposos";
+            String hql= "FROM GustosCulposos WHERE ID_USUARIO:=ID_USUARIO";
             Query query =session.createQuery(hql);
+            query.setParameter("ID_USUARIO",u);
             result=(List<GustosCulposos>)query.list();
             tx.commit();
         }catch (Exception e){

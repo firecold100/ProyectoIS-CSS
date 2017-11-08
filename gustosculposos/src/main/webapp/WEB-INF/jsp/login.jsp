@@ -40,7 +40,7 @@
         <h2 class='login_title text-center'>Ingresa</h2>
         <hr>
 
-            <form class="form-signin" action="${pageContext.request.contextPath}/ingresar" method="post" >
+            <form class="form-signin" action="${pageContext.request.contextPath}/sesion/inicioU" method="GET" >
                 <span id="reauth-email" class="reauth-email"></span>
                 <p class="input_title">Correo</p>
                 <input type="text" id="cred" class="login_box" placeholder="user01@IceCode.com" required autofocus>
