@@ -11,8 +11,6 @@ import com.megaflicks.gustosculposos.mapeobd.Usuario;
 import com.megaflicks.gustosculposos.mapeobd.GustosCulposos;
 import com.megaflicks.gustosculposos.modelo.GustosCulpososDAO;
 import com.megaflicks.gustosculposos.modelo.UsuarioDAO;
-
-import java.util.Date;
 import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -53,7 +51,7 @@ public class Controlador {
   
      
     @RequestMapping(value="/registrar", method = RequestMethod.POST)   
-    public ModelAndView guardarUsuario(HttpServletRequest request, ModelMap model) {
+    public ModelAndView guardarUsuario(HttpServletRequest request) {
     //System.out.println(request.getParameter("ID_USUARIO"));
 
         //int id= Integer.parseInt(request.getParameter("ID_USUARIO"));
@@ -82,13 +80,16 @@ public class Controlador {
 
             usuario_bd.guardar(u);
         }
-        model.addAttribute("correo", u.getCorreo());
+       ModelMap model = new ModelMap(); 
+       model.addAttribute("correo", u.getCorreo());
+       
+       model.addAttribute("correo", nombre);
         // return "profile";
-        return new ModelAndView("gustos", model);
+        return new ModelAndView("profile", model);
     }
     
     @RequestMapping(value = "/registrarGustos", method = RequestMethod.POST)
-    public String registraGustos(HttpServletRequest request) {
+    public ModelAndView registraGustos(HttpServletRequest request,ModelMap model) {
         String id = request.getParameter("correo");
         Usuario us = usuario_bd.getUsuario(id);
         String mu = request.getParameter("musica");
@@ -96,45 +97,32 @@ public class Controlador {
         String pelicula = request.getParameter("peliculas");
         String videojuegos = request.getParameter("video");
         String Sports = request.getParameter("choise5");
-        GustosCulposos u = null;
-        if (u == null) {
-            u = new GustosCulposos();
-            u.setGusto(mu);
-            u.setID_USUARIO(us);
-            Gustos_db.guardar(u);
+        GustosCulposos g = null;
+        if (g == null) {
+            g = new GustosCulposos();
+            g.setGusto(mu);
+            g.setID_USUARIO(us);
+            Gustos_db.guardar(g);
         }
 
-        return "profile";
+        return new ModelAndView("profile", model);
     }
     
      //punto de inicio de la aplicación en general
     @RequestMapping(value="/", method = RequestMethod.GET)
     public String inicio(){
-    return "login";
+        return "login";
     }
     
-    @RequestMapping(value="/ingresar", method = RequestMethod.POST)
-    public String ingresoPOST(HttpServletRequest request){
-        String url = "";
-         String cred=request.getParameter("cred");
-         String contra=request.getParameter("contra");
-        //if(usuario_bd.loginUsuarioBoolean(cred, contra)) {
-         if(1==1){
-             url= "profile";
-            }else{
-             url = "login";
-            }
-         return url;
-    }
     
     @RequestMapping(value="/perfil", method = RequestMethod.GET)
     public String perfilGet(){
-    return "profile";
+        return "profile";
     }
     
     @RequestMapping(value="/registro", method = RequestMethod.GET)
     public String registroGET(){
-    return "register";
+        return "register";
     }
     @RequestMapping(value="/inicioregister", method = RequestMethod.GET)
     public ModelAndView usuario(ModelMap model){

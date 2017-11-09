@@ -46,12 +46,12 @@ public class GustosCulposos {
         this.Gusto = Gusto;
     }
 
-    public Usuario getID_USUARIO() {
-        return ID_USUARIO;
+    public int getID_USUARIO() {
+         return this.ID_USUARIO.getID_USUARIO();
     }
 
     public void setID_USUARIO(Usuario ID_USUARIO) {
-        this.ID_USUARIO = ID_USUARIO;
+         this.ID_USUARIO = ID_USUARIO;
     }
 
 }

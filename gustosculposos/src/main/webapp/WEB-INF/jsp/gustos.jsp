@@ -41,7 +41,8 @@
                     <h5>Tus gustos culposos son:</h5>
                     <form action="${pageContext.request.contextPath}/registrarGustos"  method="POST">
                         <!--<form class="" method="post" action="#">-->
-                        <input type="text" value="${correo } " name="correo" /> 
+                        <input type="text" value="${correo } " name="correo" />
+                        <tag type="text" value="${correo } " name="correo" /> 
                         <div class="checkbox">
                             <label><input type="checkbox"  name="musica">Música</label>
                         </div>

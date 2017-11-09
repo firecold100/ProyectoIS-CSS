@@ -40,19 +40,33 @@
         <h2 class='login_title text-center'>Ingresa</h2>
         <hr>
 
-            <form class="form-signin" action="${pageContext.request.contextPath}/sesion/inicioU" method="GET" >
+          <!--   <form class="form-signin" action="${pageContext.request.contextPath}/iniciarsesion" method="GET" >
                 <span id="reauth-email" class="reauth-email"></span>
                 <p class="input_title">Correo</p>
-                <input type="text" id="cred" class="login_box" placeholder="user01@IceCode.com" required autofocus>
+                <input type="text" id="correo" class="login_box" placeholder="tupapa@pornodegalletas.com" required autofocus>
                 <p class="input_title">Contraseña</p>
-                <input type="password" id="contra" class="login_box" placeholder="******" required>
+                <input type="password" id="contrasenya" class="login_box" placeholder="******" required>
                 <div id="remember" class="checkbox">
                     <label>
                         
                     </label>
                 </div>
                 <button class="btn btn-primary btn-lg btn-block" id="Login" type=""   >Login</button>
-        </form><!-- /form -->
+        </form>/form -->
+        
+         <form action="${pageContext.request.contextPath}/ingresar" method="POST" class="login-form">
+      <p><input type="text" name="username" value="" placeholder="correo"></p>
+      <p><input type="password" name="password" value="" placeholder="Contraseña"></p>
+      <p class="remember_me">
+        <label>
+          <input type="checkbox" name="remember_me" id="remember_me">
+          no me olvides!
+        </label>
+      </p>
+      <button class="btn btn-primary btn-lg btn-block" id="Login" type=""   >Login</button>
+      <!--<p class="submit"><input type="submit" name="commit" value="Login"></p>-->
+    </form>
+        
         <form action="${pageContext.request.contextPath}/registro" method="get" class="form-signin">
                  <button class="btn btn-secondary btn-lg btn-block" type="submit">Registrarse (si no tiene una cuenta)</button>
             </form>
