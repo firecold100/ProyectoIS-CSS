@@ -5,9 +5,12 @@
  */
 package com.megaflicks.gustosculposos.controlador;
 
+import com.megaflicks.gustosculposos.mapeobd.GustosCulposos;
 import com.megaflicks.gustosculposos.mapeobd.Usuario;
+import com.megaflicks.gustosculposos.modelo.GustosCulpososDAO;
 import com.megaflicks.gustosculposos.modelo.UsuarioDAO;
 import java.security.Principal;
+import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -24,12 +27,17 @@ public class ControladorEliminar {
     @Autowired
     UsuarioDAO Usuario_db;
 
+
     @RequestMapping(value = "/eliminarUsuario", method = RequestMethod.GET)
     public String borrarUsuario(HttpServletRequest request, Principal principal) {
-    
-
-        return "eliminar";
-
+        String nom_usuario = principal.getName();
+        Usuario u = Usuario_db.getUsuario(nom_usuario);
+       
+        
+        
+        Usuario_db.eliminar(u);
+        return "redirect:logout";
+        
     }
     
         @RequestMapping(value="/cancelarEliminar", method = RequestMethod.GET)
@@ -41,7 +49,7 @@ public class ControladorEliminar {
         @RequestMapping(value="/confirmacionElimina", method = RequestMethod.GET)
     public String confirmacion(HttpServletRequest request, Principal principal){
         
-        return "login";
+        return "eliminar";
 }
     
 }

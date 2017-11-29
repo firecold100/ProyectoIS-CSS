@@ -38,17 +38,7 @@
 	<div class="row">
      <h2 class="titulo">¿Estas seguro de borrar tu perfil?</h2>
      
-    <ul class="ds-btn">
-        <form action="${pageContext.request.contextPath}/eliminarUsuario">
-        <li>
-          <button class="glyphicon glyphicon-user pull-left"><span>Si<br><small>¡Borraras tu perfil!</small></span></a> </button>
-        </li>
-        </form>
-         <form action="${pageContext.request.contextPath}/cancelarEliminar">
-        <li>
-            
-         <button class="glyphicon glyphicon-dashboard pull-left"><span>No<br><small>¡Seguiras con nosotros!</small></span></a></button> 
-            
+ 
         </li>
     </form>
     </ul>

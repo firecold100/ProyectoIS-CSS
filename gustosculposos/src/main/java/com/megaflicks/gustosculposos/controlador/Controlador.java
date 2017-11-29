@@ -83,20 +83,21 @@ public class Controlador {
        ModelMap model = new ModelMap(); 
        model.addAttribute("correo", u.getCorreo());
        
-       model.addAttribute("correo", nombre);
+       model.addAttribute("correo", correo);
         // return "profile";
-        return new ModelAndView("profile", model);
+        return new ModelAndView("gustos", model);
     }
     
     @RequestMapping(value = "/registrarGustos", method = RequestMethod.POST)
     public ModelAndView registraGustos(HttpServletRequest request,ModelMap model) {
         String id = request.getParameter("correo");
+        System.out.println(id);
         Usuario us = usuario_bd.getUsuario(id);
         String mu = request.getParameter("musica");
         String libro = request.getParameter("libros");
         String pelicula = request.getParameter("peliculas");
         String videojuegos = request.getParameter("video");
-        String Sports = request.getParameter("choise5");
+        String Sports = request.getParameter("deportes");
         GustosCulposos g = null;
         if (g == null) {
             g = new GustosCulposos();
