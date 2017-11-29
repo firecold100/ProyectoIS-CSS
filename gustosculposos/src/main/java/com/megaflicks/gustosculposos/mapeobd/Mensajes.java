@@ -35,7 +35,7 @@ import javax.validation.constraints.Size;
     , @NamedQuery(name = "Mensajes.findByIdMensaje", query = "SELECT m FROM Mensajes m WHERE m.idMensaje = :idMensaje")
     , @NamedQuery(name = "Mensajes.findByMensaje", query = "SELECT m FROM Mensajes m WHERE m.mensaje = :mensaje")
     , @NamedQuery(name = "Mensajes.findByFEnvio", query = "SELECT m FROM Mensajes m WHERE m.fEnvio = :fEnvio")})
-public class Mensajes implements Serializable {
+public class Mensajes implements Serializable, Comparable<Mensajes> {
     
     private static final long serialVersionUID = 1L;
     
@@ -227,6 +227,18 @@ public class Mensajes implements Serializable {
     @Override
     public String toString() {
         return "com.megaflicks.gustosculposos.mapeobd.Mensajes[ idMensaje=" + idMensaje + " ]";
+    }
+
+    /**
+     * Método compareTo.
+     * Método implementado de la clase Comparable.
+     * Nos sirve para comparar mensajes por la fecha en la que se enviaron.
+     * @param o Objeto mensaje a comparar
+     * @return Un entero con la información.
+     */
+    @Override
+    public int compareTo(Mensajes o) {
+        return fEnvio.compareTo(o.getFEnvio());
     }
     
 }
