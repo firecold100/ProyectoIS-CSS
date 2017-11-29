@@ -25,6 +25,7 @@
            
                 <value>com.megaflicks.gustosculposos.mapeobd.Usuario</value>
                 <value>com.megaflicks.gustosculposos.mapeobd.GustosCulposos</value>
+                <value>com.megaflicks.gustosculposos.mapeobd.Mensajes</value>
             </list>
         </property>
         <property name="hibernateProperties">

@@ -5,8 +5,10 @@
  */
 package com.megaflicks.gustosculposos.mapeobd;
 
+import java.util.Collection;
 import java.util.Date;
 import java.util.Set;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -14,17 +16,19 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.xml.bind.annotation.XmlTransient;
 
 /**
  *
  * @author hectorsama
+ * @author Alan Moreno de la Rosa
  */
 
 @Entity
 @Table (name="usuario")
 
 public class Usuario {
-
+    
  @Id@GeneratedValue(strategy =GenerationType.IDENTITY )
  @Column(name="ID_USUARIO")
  private int ID_USUARIO;
@@ -48,6 +52,14 @@ public class Usuario {
  private String contrasenya;    
  @OneToMany(mappedBy="ID_USUARIO")
  private Set<GustosCulposos> gustosculposos; 
+
+ /** Conjunto de mensajes del emisor .*/
+@OneToMany(cascade = CascadeType.ALL, mappedBy = "idUsuario1")
+private Set<Mensajes> mensajesCollectionEmisor; //Un usuario manda muchos mensajes.
+
+/** Conjunto de mensajes del receptor.*/
+@OneToMany(cascade = CascadeType.ALL, mappedBy = "idUsuario2")
+private Set<Mensajes> mensajesCollectionReceptor; //un usuario recibe varios mensajes.
  
     public int getID_USUARIO() {
         return ID_USUARIO;
@@ -128,5 +140,41 @@ public class Usuario {
 
     public void setContrasenya(String contrasenya) {
         this.contrasenya = contrasenya;
+    }
+    
+    /**
+     * Método getMensajesCollectionEmisor.
+     * Método que regresa una colección de mensajes del usuario emisor.
+     * @return Una colección de objetos de tipo mensaje del emisor.
+     */
+    public Set<Mensajes> getMensajesCollectioEmisor() {
+        return mensajesCollectionEmisor;
+    }
+
+    /**
+     * Método setMensajesCollectionEmisor.
+     * Método que asigna una nueva colección de mensajes.
+     * @param mensajesCollectionEmisor La nueva colección de mensajes a asignar.
+     */
+    public void setMensajesCollectionEmisor(Set<Mensajes> mensajesCollectionEmisor) {
+        this.mensajesCollectionEmisor = mensajesCollectionEmisor;
+    }
+
+    /**
+     * Método getMensajesCollectionReceptor.
+     * Regresa los mensajes del usuario receptor.
+     * @return Una colección de mensajes del usuario receptor
+     */
+    public Set<Mensajes> getMensajesCollectionReceptor() {
+        return mensajesCollectionReceptor;
+    }
+
+    /**
+     * Método setMensajesCollectionReceptor.
+     * Asigna una nueva colección de mensajes del receptor.
+     * @param mensajesCollectionReceptor La nueva colección de mensajes del receptor
+     */
+    public void setMensajesCollectionReceptor(Set<Mensajes> mensajesCollectionReceptor) {
+        this.mensajesCollectionReceptor = mensajesCollectionReceptor;
     }
 }
