@@ -38,7 +38,7 @@ public class MensajesDAO {
      * Método que asigna una nueva sesión con la base de datos.
      * @param sessionFactory La nueva sesión a ser asignada.
      */
-    public void setSesionFactory(SessionFactory sessionFactory){
+    public void setSessionFactory(SessionFactory sessionFactory){
         this.sessionFactory = sessionFactory;
     }
     

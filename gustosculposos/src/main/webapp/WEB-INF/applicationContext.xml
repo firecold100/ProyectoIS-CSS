@@ -44,8 +44,7 @@
     
     <bean id="UsuarioDAO" class="com.megaflicks.gustosculposos.modelo.UsuarioDAO" p:sessionFactory-ref="hibernate4AnnotatedSessionFactory"/>
     <bean id="GustosCulpososDAO" class="com.megaflicks.gustosculposos.modelo.GustosCulpososDAO" p:sessionFactory-ref="hibernate4AnnotatedSessionFactory"/>
-    <!--Al agregar el bean de abajo, truena la aplicación :/ -->
-    <!--<bean id="MensajesDAO" class="com.megaflicks.gustosculposos.modelo.MensajesDAO" p:sessionFactory-ref="hibernate4AnnotatedSessionFactory"/>-->
+    <bean id="MensajesDAO" class="com.megaflicks.gustosculposos.modelo.MensajesDAO" p:sessionFactory-ref="hibernate4AnnotatedSessionFactory"/>
 
 </beans>
 
