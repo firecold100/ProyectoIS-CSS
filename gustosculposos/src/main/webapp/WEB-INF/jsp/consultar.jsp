@@ -1,8 +1,9 @@
 <%-- 
-    Document   : Profile
-    Created on : 16-oct-2017, 14:40:56
-    Author     : hectorsama
+    Document   : consultar
+    Created on : 29-nov-2017, 17:05:29
+    Author     : andres
 --%>
+
 
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -13,11 +14,11 @@
 <html>
     <head>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <link rel="stylesheet" type="text/css" href="<c:url value="/css/profile.css"/> ">
+        <link rel="stylesheet" type="text/css" href="<c:url value="/css/consultar.css"/> ">
        
-        <script type="text/javascript" src="<c:url value="/js/profile.js" />"> </script>
+        <script type="text/javascript" src="<c:url value="/js/consultar.js" />"> </script>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>GustosCulposos</title>
+        <title>ConsultarPerfiles</title>
     </head>
     
     <body>
@@ -60,7 +61,7 @@
     		<img src="http://s9.postimg.org/ty7whgnnj/CYMERA_20150512_162628.Jpg" class="img-circle img-thumbnail">
                  <br /> <br /> 
     
-          <h3>Bienvenido!  ${nombre} </h3>
+          <h3>PERFILES COMPATIBLES CONTIGO!  ${nombre} </h3>
         <h4 style="color:#A9ABA6"> ${correo}</h4>
 		</div>
   	</div>
