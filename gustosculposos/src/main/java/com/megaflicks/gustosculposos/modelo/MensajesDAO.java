@@ -27,6 +27,7 @@ public class MensajesDAO {
     /**
      * Método getSessionFactory.
      * Método que regresa al objeto de tipo SessionFactory.
+     * ***Necesario que el nombre sea tal cual getSessionFactory***
      * @return Un objeto de tipo SessionFactory con la información.
      */
     public SessionFactory getSessionFactory() {
@@ -36,6 +37,7 @@ public class MensajesDAO {
     /**
      * Método setSessionFactory.
      * Método que asigna una nueva sesión con la base de datos.
+     * ***Necesario que el nombre sea tal cual setSessionFactory***
      * @param sessionFactory La nueva sesión a ser asignada.
      */
     public void setSessionFactory(SessionFactory sessionFactory){
@@ -151,6 +153,7 @@ public class MensajesDAO {
      * de manera cronológica.
      * @param usuario1 El primer usuario.
      * @param usuario2 El segundo usuario.
+     * @return Una lista de mensajes con la información
      */
     public List<Mensajes> getConversation(int usuario1, int usuario2){
         List<Mensajes> enviadosPorU1 = getMensajes(usuario1,usuario2);

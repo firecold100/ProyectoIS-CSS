@@ -13,22 +13,20 @@
         <link rel="stylesheet" type="text/css" href="<c:url value="/css/register.css"/> ">  
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- Archivo jquery local-->
+        <script type="text/javascript" 
+                src="<c:url value="/jquery/jquery-3.2.1.min.js"/>" defer>
+        </script>
+        <!-- Archivo bootstrap.js local-->
+        <script type="text/javascript" 
+                src="<c:url value="/bootstrap-3.3.7/js/bootstrap.min.js"/>" defer>
+        </script>
+        <!--Archivo bootstrap.css local-->
+        <link rel="stylesheet" href="<c:url value="/bootstrap-3.3.7/css/bootstrap.min.css"/>" />
+        
+        <!--font-awesome local-->
+        <link rel="stylesheet" href="<c:url value="/css/font-awesome/css/font-awesome.min.css"/>"/>
 
-
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/css/bootstrap.min.css" />
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-
-
-
-        <!-- Website CSS style -->
-        <link href="css/bootstrap.min.css" rel="stylesheet">
-
-        <!-- Website Font style -->
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
-
-        <!-- Google Fonts -->
-        <link href='https://fonts.googleapis.com/css?family=Passion+One' rel='stylesheet' type='text/css'>
-        <link href='https://fonts.googleapis.com/css?family=Oxygen' rel='stylesheet' type='text/css'>
 
         <title>Eliminar Perfil</title>
     </head>
@@ -55,11 +53,6 @@
     
 	</div>
 </div>
-
-        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-        <!-- Include all compiled plugins (below), or include individual files as needed -->
-        <script src="js/bootstrap.min.js"></script>
     </body>
 </html>
 

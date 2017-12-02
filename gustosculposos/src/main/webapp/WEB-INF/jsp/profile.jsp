@@ -14,8 +14,12 @@
     <head>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" type="text/css" href="<c:url value="/css/profile.css"/> ">
-       
-        <script type="text/javascript" src="<c:url value="/js/profile.js" />"> </script>
+        <!-- Archivo jquery local-->
+        <script type="text/javascript" 
+                src="<c:url value="/jquery/jquery-3.2.1.min.js"/>" defer>
+        </script>
+        <!--Existe un problema con éste javascript. Da un error en consola!-->
+        <script type="text/javascript" src="<c:url value="/js/profile.js" />" defer> </script>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>GustosCulposos</title>
     </head>
@@ -57,6 +61,7 @@
 <div class="row destacados">  
     <div class="col-md-offset-4 col-md-4">
   		<div class="box1">
+                <!--Imagen No disponible!!! :( -->
     		<img src="http://s9.postimg.org/ty7whgnnj/CYMERA_20150512_162628.Jpg" class="img-circle img-thumbnail">
                  <br /> <br /> 
     

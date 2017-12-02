@@ -26,7 +26,7 @@ public class controladorEditarPerfil {
     @Autowired
     GustosCulpososDAO Gustos_db;
     
-       @RequestMapping(value="/editarperfil", method = RequestMethod.POST)
+       @RequestMapping(value="/editarperfil", method = RequestMethod.GET)
         public ModelAndView ingresar(HttpServletRequest request,ModelMap model){
             String id = (String) model.get("correo");
          Usuario usuario_actual = Usuario_db.getUsuario(id);

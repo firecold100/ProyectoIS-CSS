@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
@@ -23,9 +24,22 @@ import org.springframework.web.servlet.ModelAndView;
  */
 @Controller
 public class ControladorChatear {
-    /** Objeto que nos sirve para comunicarnos con la base de datos */
+    /** Objeto que nos sirve para comunicarnos con la base de datos. Declarado en applicationContext.xml */
     @Autowired
     MensajesDAO mensajes_db;
+    
+    /**
+     * Método chat.
+     * Método que hace un mapeo para mostrar la página de chatear en la
+     * ruta especificada.
+     * @param request La petición enviada al servidor.
+     * @return Un objeto ModelAndView con el nombre del jsp y el modelo.
+     */
+    @RequestMapping(value="/chat", method = RequestMethod.GET)
+    public ModelAndView chat(HttpServletRequest request){
+        ModelMap model = new ModelMap(); 
+        return new ModelAndView("chat",model);
+    }
     
     /**
      *  Método guardaMensaje.
