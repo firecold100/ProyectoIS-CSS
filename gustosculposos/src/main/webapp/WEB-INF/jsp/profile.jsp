@@ -12,12 +12,21 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <link rel="stylesheet" type="text/css" href="<c:url value="/css/profile.css"/> ">
-        <!-- Archivo jquery local-->
+         <!-- Archivo jquery local-->
         <script type="text/javascript" 
                 src="<c:url value="/jquery/jquery-3.2.1.min.js"/>" defer>
         </script>
+        <!-- Archivo de bootstrap local-->
+        <script type="text/javascript"
+                src="<c:url value="/bootstrap-3.3.7/js/bootstrap.min.js"/>" defer>
+        </script>
+        <link rel="stylesheet" href="<c:url value="/bootstrap-3.3.7/css/bootstrap.min.css"/>"/>
+        
+        <!--font-awesome local-->
+        <link rel="stylesheet" href="<c:url value="/css/font-awesome/css/font-awesome.min.css"/>"/>
+        
+        <link rel="stylesheet" type="text/css" href="<c:url value="/css/profile.css"/> ">
+        
         <!--Existe un problema con éste javascript. Da un error en consola!-->
         <script type="text/javascript" src="<c:url value="/js/profile.js" />" defer> </script>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
