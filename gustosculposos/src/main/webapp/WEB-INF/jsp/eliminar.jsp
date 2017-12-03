@@ -32,12 +32,15 @@
         
                 <div class="container">
 	<div class="row">
+              <form action="${pageContext.request.contextPath}/eliminarUsuario" method="GET">
      <h2 class="titulo">¿Estas seguro de borrar tu perfil?</h2>
      
-   <form action="${pageContext.request.contextPath}/eliminarUsuario" method="GET">
-<button type="button" class="btn btn-primary btn-lg active">Eliminar</button>
+ 
+     <li><button type="button" class="btn btn-primary btn-lg active">Eliminar</button></li>
    </form>
+   <form action="${pageContext.request.contextPath}/cancelarEliminar" method="GET">
 <button type="button" class="btn btn-default btn-lg active">Quedarse!!</button>
+</form>
 
     </body>
 </html>

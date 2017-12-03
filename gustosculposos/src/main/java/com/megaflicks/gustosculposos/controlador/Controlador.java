@@ -78,6 +78,7 @@ public class Controlador {
             u.setContrasenya(hashedPassword);
             u.setCorreo(correo);
             u.setSexo(sexo);
+             u.setRol("ROLE_ADMIN");
 
             usuario_bd.guardar(u);
               model.addAttribute("correo", correo);
@@ -87,7 +88,7 @@ public class Controlador {
       // ModelMap model = new ModelMap(); 
      //  model.addAttribute("correo", u.getCorreo());
        
-      return new ModelAndView("login",model);
+      return new ModelAndView("inicio",model);
     }
     
     @RequestMapping(value = "/registrarGustos", method = RequestMethod.POST)
@@ -140,10 +141,10 @@ public class Controlador {
     }
     
      //punto de inicio de la aplicación en general
-    @RequestMapping(value="/", method = RequestMethod.GET)
+    /*@RequestMapping(value="/", method = RequestMethod.GET)
     public String inicio(){
-        return "login";
-    }
+        return "inicio";
+    }*/
     
     
     @RequestMapping(value="/perfil", method = RequestMethod.GET)

@@ -8,6 +8,7 @@ import com.megaflicks.gustosculposos.mapeobd.GustosCulposos;
 import com.megaflicks.gustosculposos.mapeobd.Usuario;
 import com.megaflicks.gustosculposos.modelo.GustosCulpososDAO;
 import com.megaflicks.gustosculposos.modelo.UsuarioDAO;
+import java.security.Principal;
 import java.util.List;
 
 import java.util.Objects;
@@ -54,7 +55,7 @@ public class ControladorIniciarSesion {
             return new ModelAndView(url,model);
         } **/
     
-    
+    /*FUNCIONA
 
                @RequestMapping(value="/ingresar", method = RequestMethod.POST)
         public ModelAndView ingresar(HttpServletRequest request,ModelMap model){
@@ -85,6 +86,36 @@ public class ControladorIniciarSesion {
     public ModelAndView fin(){
         return new ModelAndView( "login",new ModelMap ());
     }
+
+*/
+      @RequestMapping(value="/")
+    public String inicio(HttpServletRequest request){
+        if(request.isUserInRole("ROLE_ADMIN"))
+            return "redirect:/sesion/inicioU";
+        
+        return "inicio";
+}
+    
+     @RequestMapping(value="/login_error")
+    public ModelAndView fallo(HttpServletRequest request,ModelMap model){
+        if(request.isUserInRole("ROLE_ADMIN"))
+            return new ModelAndView("redirect:/sesion/inicioU");
+        
+        return new ModelAndView("inicio",model);
+}
+    
+        @RequestMapping(value="/sesion/inicioU", method = RequestMethod.GET)
+    public ModelAndView inicioU(HttpServletRequest request,ModelMap model ,Principal principal){
+        
+        String u = principal.getName();
+Usuario usuario = Usuario_db.getUsuario(u);
+ model.addAttribute("username", u);
+  model.addAttribute("correo", usuario.getCorreo());
+model.addAttribute("contrasenya", usuario.getContrasenya());
+return new ModelAndView("profile",model);
+    
+    
+}
 }
     
     

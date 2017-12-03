@@ -44,10 +44,10 @@
                 </div>
                 <button class="btn btn-primary btn-lg btn-block" id="Login" type=""   >Login</button>
         </form>/form -->
-        
-         <form action="${pageContext.request.contextPath}/ingresar" method="POST" class="login-form">
+        <div class="login">
+         <form action="${pageContext.request.contextPath}/login" method="POST" class="login-form">
       <p><input type="text" name="username" value="" placeholder="Correo"></p>
-      <p><input type="password" name="password" value="" placeholder="Contraseña"></p>
+      <p><input type="password" name="contrasenya" value="" placeholder="Contraseña"></p>
       <p class="remember_me">
         <label>
           <input type="checkbox" name="remember_me" id="remember_me">
@@ -59,6 +59,7 @@
       <!--<p class="submit"><input type="submit" name="commit" value="Login"></p>-->
            
     </form>
+      </div>
 
 
 

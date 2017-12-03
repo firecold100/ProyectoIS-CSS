@@ -50,8 +50,18 @@ public class Usuario {
  private String edad;
  @Column (name="contrasenya")
  private String contrasenya;    
+  @Column(name = "rol")
+private String rol;
  @OneToMany(mappedBy="ID_USUARIO")
  private Set<GustosCulposos> gustosculposos; 
+
+    public String getRol() {
+        return rol;
+    }
+
+    public void setRol(String rol) {
+        this.rol = rol;
+    }
 
  /** Conjunto de mensajes del emisor .*/
 @OneToMany(cascade = CascadeType.ALL, mappedBy = "idUsuario1")
