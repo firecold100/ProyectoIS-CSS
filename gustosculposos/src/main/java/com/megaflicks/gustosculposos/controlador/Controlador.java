@@ -93,18 +93,46 @@ public class Controlador {
         String id = request.getParameter("correo");
         System.out.println(id);
         Usuario us = usuario_bd.getUsuario(id);
-        String mu = request.getParameter("musica");
+        String musica = request.getParameter("musica");
         String libro = request.getParameter("libros");
         String pelicula = request.getParameter("peliculas");
         String videojuegos = request.getParameter("video");
-        String Sports = request.getParameter("deportes");
-        GustosCulposos g = null;
-        if (g == null) {
-            g = new GustosCulposos();
-            g.setGusto(mu);
+        String sports = request.getParameter("deportes");
+       
+        if (musica != null && musica.equals("on")) {
+            GustosCulposos  g = new GustosCulposos();
+            g.setGusto("Musica");
             g.setID_USUARIO(us);
             Gustos_db.guardar(g);
         }
+        
+          if (libro != null && libro.equals("on")) {
+            GustosCulposos  g2 = new GustosCulposos();
+            g2.setGusto("Libros");
+            g2.setID_USUARIO(us);
+            Gustos_db.guardar(g2);
+        }
+          
+          if (pelicula != null && pelicula.equals("on")) {
+            GustosCulposos  g3= new GustosCulposos();
+            g3.setGusto("Peliculas");
+            g3.setID_USUARIO(us);
+            Gustos_db.guardar(g3);
+        }
+          if (videojuegos != null && videojuegos.equals("on")) {
+            GustosCulposos  g4= new GustosCulposos();
+            g4.setGusto("Videojuegos");
+            g4.setID_USUARIO(us);
+            Gustos_db.guardar(g4);
+        }
+          if (sports != null && sports.equals("on")) {
+            GustosCulposos  g5= new GustosCulposos();
+            g5.setGusto("Deportes");
+            g5.setID_USUARIO(us);
+            Gustos_db.guardar(g5);
+        }
+
+
 
         return new ModelAndView("profile", model);
     }

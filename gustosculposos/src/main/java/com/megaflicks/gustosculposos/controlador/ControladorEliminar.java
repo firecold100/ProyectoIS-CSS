@@ -43,7 +43,7 @@ public class ControladorEliminar {
         @RequestMapping(value="/cancelarEliminar", method = RequestMethod.GET)
     public String cancelar(HttpServletRequest request, Principal principal){
         
-        return "redirect:/sesion/inicioU";
+        return "redirect:/profile";
 }
     
         @RequestMapping(value="/confirmacionElimina", method = RequestMethod.GET)
