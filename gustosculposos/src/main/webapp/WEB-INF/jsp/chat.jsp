@@ -28,6 +28,10 @@
         <script type="text/javascript"
                 src="<c:url value="/js/facebook-js-chat.js" />" defer>
         </script>
+        <!--Script para las cajas de chat-->
+        <script type="text/javascript"
+                src="<c:url value="/js/chat-box-js.js" />" defer>
+        </script>
         <!-- Archivo CSS -->
         <link rel="stylesheet" href="<c:url value="/css/chat.css"/>"/>
         <!-- CSS de bootstrap -->

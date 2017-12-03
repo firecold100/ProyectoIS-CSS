@@ -84,7 +84,6 @@ function display_popups(){
     }
     for(var j = i; j < popups.length; j++){ //Ocultamos a los demás
         var elemento = document.getElementById(popups[j]);
-        console.log(j+"   "+popups[j]);
         elemento.style.display = "none";
     }
 }
@@ -110,7 +109,7 @@ function register_popup(id, name){
                 element += '<div class="popup-head">';
                 element += '<div class="popup-head-left">'+ name +'</div>';
                 element += '<div class="popup-head-right"><a href="javascript:close_popup(\''+ id +'\');">&#10005;</a></div>'; //El link es el tache
-                element += '<div style="clear: both"></div></div><div class="popup-messages"></div></div>';
+                element += '<div style="clear: both"></div></div><div class="popup-messages">'+getChatBox()+'</div></div>';
                 
     
     //Ponemos el elementos la etiquega body. Esto no está tan bien en general pero es para probar
@@ -133,4 +132,25 @@ function calculate_popups(){
         total_popups = parseInt(width/320);
     }
     display_popups();
+}
+
+/**
+ * Función que regresa un div chat-box (cadena html) para agregar dentro de 
+ * popup-messages.
+ * @return {String} Una cadena con el div
+ */
+function getChatBox(){
+    var box ='<div id="chat-box" class="frame">'
+            +'<div>'
+                +'<ul id="mensajes"></ul><!--Lista desordenada de mensajes-->'
+            +'</div>'
+            +'<div>'
+                +'<div class="msj-rta macro" style="margin:auto">'
+                    +'<div class="text text-r" style="background:whitesmoke !important">'
+                        +'<input id="textoTipeado" class="mytext" placeholder="Type a message"/>'
+                    +'</div>'
+                +'</div>'
+            +'</div>'
+        +'</div>';
+    return box;
 }
