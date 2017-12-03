@@ -14,6 +14,7 @@ import com.megaflicks.gustosculposos.modelo.UsuarioDAO;
 import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -63,12 +64,12 @@ public class Controlador {
         String apellido_m = request.getParameter("apellido_m");
         String contrasenya = request.getParameter("contrasenya");
         String sexo = request.getParameter("sexo");
-        // BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
-        // String hashedPassword = passwordEncoder.encode(contrasenya);
-
-        Usuario u = null;
+        BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
+        String hashedPassword = passwordEncoder.encode(contrasenya);
+        String contrasenaConf = request.getParameter("confirm");
+       Usuario u = usuario_bd.getUsuario(correo);
         // u = usuario_bd.getUsuario(id);
-        if (u == null) {
+        if (u == null && contrasenya.equals(contrasenaConf)) {
             u = new Usuario();
             u.setAlias(alias);
             u.setNombre(nombre);
