@@ -22,7 +22,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 /**
  *
- * @author unjordi
+ * @author hectorsama
  */
 @Controller
 public class ControladorIniciarSesion {

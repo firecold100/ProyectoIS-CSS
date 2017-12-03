@@ -47,7 +47,7 @@
         <div class="login">
          <form action="${pageContext.request.contextPath}/login" method="POST" class="login-form">
       <p><input type="text" name="username" value="" placeholder="Correo"></p>
-      <p><input type="password" name="contrasenya" value="" placeholder="Contraseña"></p>
+      <p><input type="password" name="password" value="" placeholder="Contraseña"></p>
       <p class="remember_me">
         <label>
           <input type="checkbox" name="remember_me" id="remember_me">

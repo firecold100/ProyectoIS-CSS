@@ -41,7 +41,7 @@
                 <a  ><button id="button"  class="fa fa-search"   > </button ></a>    
             </form>
 
-            <form action="${pageContext.request.contextPath}/cerrarsesion" method="get"  > 
+            <form action="${pageContext.request.contextPath}/logout"   > 
                 <a  > <button id ="button" class="fa fa-user-o" aria-hidden="true"></button></a>
                   </form>
                 
