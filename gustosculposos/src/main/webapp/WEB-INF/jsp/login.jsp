@@ -48,20 +48,21 @@
          <form action="${pageContext.request.contextPath}/ingresar" method="POST" class="login-form">
       <p><input type="text" name="username" value="" placeholder="Correo"></p>
       <p><input type="password" name="password" value="" placeholder="Contraseña"></p>
-      <input name = "fallo" id="fallo" onlyread value ="<%= request.getParameter("error") %>" style="display:none;"/>
-<p id="message" syle="color:red;"></p>
       <p class="remember_me">
         <label>
           <input type="checkbox" name="remember_me" id="remember_me">
          ¡No me olvides!
         </label>
+           
       </p>
+      <button class="btn btn-primary tn-lg btn-block" id="Login" type=""   >Login</button>
       <!--<p class="submit"><input type="submit" name="commit" value="Login"></p>-->
+           
     </form>
 
-<form  method="Post"  class="form-signin">
-      <button class="btn btn-primary tn-lg btn-block" id="Login" type=""   >Login</button>
-</form>
+
+
+
         
         <form action="${pageContext.request.contextPath}/registro" method="get" class="form-signin">
                  <button class="btn btn-secondary btn-lg btn-block" type="submit">Registrarse (si no tiene una cuenta)</button>
@@ -69,6 +70,8 @@
                  
            
         </div><!-- /card-container -->
+        
+        
     </div><!-- /container -->
             
         </body>

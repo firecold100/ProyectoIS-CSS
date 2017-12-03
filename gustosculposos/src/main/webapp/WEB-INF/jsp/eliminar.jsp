@@ -34,13 +34,10 @@
 	<div class="row">
      <h2 class="titulo">¿Estas seguro de borrar tu perfil?</h2>
      
- 
-        </li>
-    </form>
-    </ul>
-    
-	</div>
-</div>
+   <form action="${pageContext.request.contextPath}/eliminarUsuario" method="GET">
+<button type="button" class="btn btn-primary btn-lg active">Eliminar</button>
+   </form>
+<button type="button" class="btn btn-default btn-lg active">Quedarse!!</button>
 
     </body>
 </html>

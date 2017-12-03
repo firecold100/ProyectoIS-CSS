@@ -52,7 +52,7 @@ public class Controlador {
   
      
     @RequestMapping(value="/registrar", method = RequestMethod.POST)   
-    public ModelAndView guardarUsuario(HttpServletRequest request) {
+    public ModelAndView guardarUsuario(HttpServletRequest request,ModelMap model) {
     //System.out.println(request.getParameter("ID_USUARIO"));
 
         //int id= Integer.parseInt(request.getParameter("ID_USUARIO"));
@@ -66,27 +66,28 @@ public class Controlador {
         String sexo = request.getParameter("sexo");
         BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
         String hashedPassword = passwordEncoder.encode(contrasenya);
+        System.out.println(hashedPassword);
         String contrasenaConf = request.getParameter("confirm");
-       Usuario u = usuario_bd.getUsuario(correo);
-        // u = usuario_bd.getUsuario(id);
+       Usuario u = null;
         if (u == null && contrasenya.equals(contrasenaConf)) {
             u = new Usuario();
             u.setAlias(alias);
             u.setNombre(nombre);
             u.setApellido_p(apellido_p);
             u.setApellido_m(apellido_m);
-            u.setContrasenya(contrasenya);
+            u.setContrasenya(hashedPassword);
             u.setCorreo(correo);
             u.setSexo(sexo);
 
             usuario_bd.guardar(u);
-        }
-       ModelMap model = new ModelMap(); 
-       model.addAttribute("correo", u.getCorreo());
-       
-       model.addAttribute("correo", correo);
+              model.addAttribute("correo", correo);
         // return "profile";
         return new ModelAndView("gustos", model);
+        }
+      // ModelMap model = new ModelMap(); 
+     //  model.addAttribute("correo", u.getCorreo());
+       
+      return new ModelAndView("login",model);
     }
     
     @RequestMapping(value = "/registrarGustos", method = RequestMethod.POST)

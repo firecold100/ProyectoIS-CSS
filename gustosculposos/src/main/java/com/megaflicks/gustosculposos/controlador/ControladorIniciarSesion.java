@@ -4,9 +4,11 @@
  * and open the template in the editor.
  */
 package com.megaflicks.gustosculposos.controlador;
+import com.megaflicks.gustosculposos.mapeobd.GustosCulposos;
 import com.megaflicks.gustosculposos.mapeobd.Usuario;
 import com.megaflicks.gustosculposos.modelo.GustosCulpososDAO;
 import com.megaflicks.gustosculposos.modelo.UsuarioDAO;
+import java.util.List;
 
 import java.util.Objects;
 import javax.servlet.http.HttpServletRequest;
@@ -28,8 +30,7 @@ public class ControladorIniciarSesion {
     UsuarioDAO Usuario_db;
     @Autowired
     GustosCulpososDAO Gustos_db;
-
-/**
+    /**
         @RequestMapping(value="/iniciarsesion", method = RequestMethod.GET)
         public ModelAndView inicioSesion(HttpServletRequest request,ModelMap model){
             String url = "login";
@@ -53,8 +54,11 @@ public class ControladorIniciarSesion {
             return new ModelAndView(url,model);
         } **/
     
-        @RequestMapping(value="/ingresar", method = RequestMethod.POST)
+    
+
+               @RequestMapping(value="/ingresar", method = RequestMethod.POST)
         public ModelAndView ingresar(HttpServletRequest request,ModelMap model){
+
             String url = "login";
             String id = request.getParameter("username");
             String contrasenya_ingresada = request.getParameter("password");
@@ -71,6 +75,7 @@ public class ControladorIniciarSesion {
                 model.addAttribute(usuario_actual);
                 model.addAttribute("correo", id);
                 model.addAttribute("nombre",usuario_actual.getNombre());
+               
                 url = "profile";
             }
             return new ModelAndView(url,model);
@@ -80,5 +85,10 @@ public class ControladorIniciarSesion {
     public ModelAndView fin(){
         return new ModelAndView( "login",new ModelMap ());
     }
-    }
+}
+    
+    
+    
+    
 
+    
