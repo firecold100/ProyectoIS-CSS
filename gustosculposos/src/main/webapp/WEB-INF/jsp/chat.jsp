@@ -24,8 +24,59 @@
         <script type="text/javascript"
                 src="<c:url value="/bootstrap-3.3.7/js/bootstrap.min.js"/>" defer>
         </script>
+        <!--Script para hacer que se parezca al chat de facebook-->
+        <script type="text/javascript"
+                src="<c:url value="/js/facebook-js-chat.js" />" defer>
+        </script>
+        <!-- Archivo CSS -->
+        <link rel="stylesheet" href="<c:url value="/css/chat.css"/>"/>
+        <!-- CSS de bootstrap -->
+        <link rel="stylesheet" href="<c:url value="/bootstrap-3.3.7/css/bootstrap.min.css"/>"/>
+        <!--font-awesome local-->
+        <link rel="stylesheet" href="<c:url value="/css/font-awesome/css/font-awesome.min.css"/>"/>
     </head>
     <body>
         <h1>Página del chat</h1>
+    <!--Inicia pegado de código -->
+        <div class="chat-sidebar">
+            <div class="sidebar-name">
+                <!-- Pass username and display name to register popup -->
+                <a href="javascript:register_popup('narayan-prusty', 'Narayan Prusty');">
+                    <img width="30" height="30" src="<c:url value="/img/G_de_gustos_culposos.png" />" />
+                    <span>Narayan Prusty</span>
+                </a>
+            </div>
+            <div class="sidebar-name">
+                <a href="javascript:register_popup('qnimate', 'QNimate');">
+                    <img width="30" height="30" src="<c:url value="/img/G_de_gustos_culposos.png" />" />
+                    <span>QNimate</span>
+                </a>
+            </div>
+            <div class="sidebar-name">
+                <a href="javascript:register_popup('qscutter', 'QScutter');">
+                    <img width="30" height="30" src="<c:url value="/img/G_de_gustos_culposos.png" />" />
+                    <span>QScutter</span>
+                </a>
+            </div>
+            <div class="sidebar-name">
+                <a href="javascript:register_popup('qidea', 'QIdea');">
+                    <img width="30" height="30" src="<c:url value="/img/G_de_gustos_culposos.png" />" />
+                    <span>QIdea</span>
+                </a>
+            </div>
+            <div class="sidebar-name">
+                <a href="javascript:register_popup('qazy', 'QAzy');">
+                    <img width="30" height="30" src="<c:url value="/img/G_de_gustos_culposos.png" />" />
+                    <span>QAzy</span>
+                </a>
+            </div>
+            <div class="sidebar-name">
+                <a href="javascript:register_popup('qblock', 'QBlock');">
+                    <img width="30" height="30" src="<c:url value="/img/G_de_gustos_culposos.png" />"/>
+                    <span>QBlock</span>
+                </a>
+            </div>
+        </div>
+    <!-- Termina pegado de código -->
     </body>
 </html>
