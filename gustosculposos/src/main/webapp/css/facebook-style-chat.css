@@ -1,0 +1,130 @@
+px/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 2/12/2017, 06:47:59 PM
+    Author     : Alan Moreno de la Rosa
+*/
+/**
+    Archivo que contiene el estilo de para mostrar el chat.
+    El chat sólo se muestra si el ancho es mayor que 540px.
+    Los Popup y la barra latera están fijos al viewport.
+*/
+
+/*Sólo lo mostramos cuando sea mayor a 540px*/
+@media only screen and (max-width : 540px) {
+    .chat-sidebar{
+        display: none !important;
+    }
+    .chat-popup{
+        display: none !important;
+    }
+}
+
+body{
+    background-color: #e9eaed;
+}
+
+/* Propiedades de la barra lateral */
+.chat-sidebar{
+    width : 200px;
+    position: fixed;
+    height: 100%;
+    right: 0px;
+    top: 0px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border: 1px solid rgba(29, 49, 91, .3);
+}
+
+/* Propiedades del nombre de la barra lateral */
+.sidebar-name{
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-bottom: 4px;
+    font-size: 12px;
+}
+
+/*Propiedades de las etiquetas span dentro de .sidebar-name*/
+.sidebar-name span{
+    padding-left: 5px;
+}
+
+/* Propiedades de los links dentro del .sidebar-name */
+.sidebar-name a{
+    display: block;
+    height:100%;
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Hacemos que cambie de color el fondo cuando pasamos el ratón sobre el nombre de la
+   barra */
+.sidebar-name:hover{
+    background-color:#e1e2e5;
+}
+
+/* Propiedades de las imagenes dentro del sidebar */
+.sidebar-name img{
+    width: 32px; 
+}
+
+/* Propiedades de todos los "popup box" */
+.popup-box{
+    display: none;
+    position: fixed;
+    bottom: 0px;
+    right: 220px;
+    height: 285px;
+    background-color: rgb(237,239,244);
+    width: 300px;
+    border: 1px solid rgba(29, 49, 91, .3);
+}
+
+/* Propiedades de todos los .popup-head dentro de .popup-box */
+.popup-box .popup-head{
+    background-color: #6d84b4;
+    padding: 5px;
+    color: white;
+    font-weight: bold;
+    font-size: 14px;
+    clear: both;
+}
+
+/* 
+    Propiedades de todos los .popup-head-left dentro 
+    de .popup-head que están dentro de .popup-box 
+*/
+.popup-box .popup-head .popup-head-left{
+    float: left;
+}
+
+/* 
+    Propiedades de todos los .popup-head-right dentro 
+    de .popup-head que están dentro de .popup-box 
+*/
+.popup-box .popup-head .popup-head-right{
+    float: right;
+    opacity: 0.5;
+}
+
+/*
+    Propiedades de todos los enlaces contenidos en .popup-head-right
+    dentro de .popup-head dentro de .popup-box
+ */
+ .popup-box .popup-head .popup-head-right a{
+     text-decoration: none;
+     color: inherit;
+ }
+ 
+ /*
+    Propiedades de todos los .popup-messages dentro de todos los
+    .popup-box
+ */
+ .popup-box .popup-messages{
+     height: 100%;
+     overflow-y: scroll;
+ }
+ 
