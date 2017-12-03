@@ -14,14 +14,14 @@ and open the template in the editor.
 */
 
 /*Sólo lo mostramos cuando sea mayor a 540px*/
-@media only screen and (max-width : 540px) {
+ @media only screen and (max-width : 540px) {
     .chat-sidebar{
         display: none !important;
     }
     .chat-popup{
         display: none !important;
     }
-}
+ }
 
 body{
     background-color: #e9eaed;
