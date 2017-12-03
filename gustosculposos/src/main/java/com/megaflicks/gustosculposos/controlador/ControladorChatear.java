@@ -5,7 +5,11 @@
  */
 package com.megaflicks.gustosculposos.controlador;
 
+import com.megaflicks.gustosculposos.mapeobd.Usuario;
+import com.megaflicks.gustosculposos.modelo.GustosCulpososDAO;
 import com.megaflicks.gustosculposos.modelo.MensajesDAO;
+import com.megaflicks.gustosculposos.modelo.UsuarioDAO;
+import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
@@ -28,6 +32,12 @@ public class ControladorChatear {
     @Autowired
     MensajesDAO mensajes_db;
     
+    @Autowired
+    UsuarioDAO usuario_db;
+    
+    @Autowired
+    GustosCulpososDAO gustos_db;
+    
     /**
      * Método chat.
      * Método que hace un mapeo para mostrar la página de chatear en la
@@ -37,7 +47,14 @@ public class ControladorChatear {
      */
     @RequestMapping(value="/chat", method = RequestMethod.GET)
     public ModelAndView chat(HttpServletRequest request){
+        // Aquí me hace falta obtener los datos del usuario que inició
+        // Sesión para poder hacer la consulta desde aquí de los usuarios
+        // Que serán mostrados en el chat.
+        List<Usuario> usuarios = usuario_db.getUsuarios();
         ModelMap model = new ModelMap(); 
+        //Se deberían mandar los usuarios tales que coincidan con los gustos 
+        //Del usuario que inició sesión menos el mismo. Por el momento todos se mandan.
+        model.addAttribute("usuarios",usuarios);
         return new ModelAndView("chat",model);
     }
     

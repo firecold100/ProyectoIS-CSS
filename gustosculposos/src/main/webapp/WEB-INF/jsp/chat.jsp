@@ -37,46 +37,16 @@
     </head>
     <body>
         <h1>Página del chat</h1>
-    <!--Inicia pegado de código -->
         <div class="chat-sidebar">
-            <div class="sidebar-name">
-                <!-- Pass username and display name to register popup -->
-                <a href="javascript:register_popup('narayan-prusty', 'Narayan Prusty');">
-                    <img width="30" height="30" src="<c:url value="/img/G_de_gustos_culposos.png" />" />
-                    <span>Narayan Prusty</span>
-                </a>
-            </div>
-            <div class="sidebar-name">
-                <a href="javascript:register_popup('qnimate', 'QNimate');">
-                    <img width="30" height="30" src="<c:url value="/img/G_de_gustos_culposos.png" />" />
-                    <span>QNimate</span>
-                </a>
-            </div>
-            <div class="sidebar-name">
-                <a href="javascript:register_popup('qscutter', 'QScutter');">
-                    <img width="30" height="30" src="<c:url value="/img/G_de_gustos_culposos.png" />" />
-                    <span>QScutter</span>
-                </a>
-            </div>
-            <div class="sidebar-name">
-                <a href="javascript:register_popup('qidea', 'QIdea');">
-                    <img width="30" height="30" src="<c:url value="/img/G_de_gustos_culposos.png" />" />
-                    <span>QIdea</span>
-                </a>
-            </div>
-            <div class="sidebar-name">
-                <a href="javascript:register_popup('qazy', 'QAzy');">
-                    <img width="30" height="30" src="<c:url value="/img/G_de_gustos_culposos.png" />" />
-                    <span>QAzy</span>
-                </a>
-            </div>
-            <div class="sidebar-name">
-                <a href="javascript:register_popup('qblock', 'QBlock');">
-                    <img width="30" height="30" src="<c:url value="/img/G_de_gustos_culposos.png" />"/>
-                    <span>QBlock</span>
-                </a>
-            </div>
+            <c:forEach var="usuario" items="${usuarios}">
+                <div class="sidebar-name">
+                    <!-- Pasa el id del usuario y el nombre a mostrar  -->
+                    <a href="javascript:register_popup('${usuario.ID_USUARIO}', '${usuario.alias}');" >
+                        <img width="30" height="30" src="<c:url value="/img/G_de_gustos_culposos.png" />" />
+                        <span>${usuario.alias}</span>
+                    </a>
+                </div>
+            </c:forEach>
         </div>
-    <!-- Termina pegado de código -->
     </body>
 </html>
