@@ -50,9 +50,7 @@
                         <div class="form-group">
                             <input type="text" class="form-control" id="materno" name="materno" placeholder="Apellido Materno" value=${materno} >
                         </div>
-                        <div class="form-group">
-                            <input type="text" class="form-control" id="email" name="email" placeholder="Email" value=${correo}>
-                        </div>
+
                         <div class="form-group">
                             <input type="text" class="form-control" id="usuario" name="usuario" placeholder="Nombre de Usuario" value=${usuario} >
                         </div>

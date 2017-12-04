@@ -40,7 +40,6 @@ public class controladorEditarPerfil {
         model.addAttribute("nombre_", us.getNombre());
         model.addAttribute("paterno", us.getApellido_p());
         model.addAttribute("materno", us.getApellido_m());
-        model.addAttribute("email", us.getCorreo());
         model.addAttribute("alias_", us.getAlias());
         return new ModelAndView("editar", model);
 
@@ -54,34 +53,30 @@ public class controladorEditarPerfil {
 
         String name = request.getParameter("usuario");
         String user = request.getParameter("name");
-        String lastnameP = request.getParameter("paterno");
-        String lastnameM = request.getParameter("materno");
-        String mail = request.getParameter("email");
-        String password = request.getParameter("contrasena");
+        String apellido_paterno = request.getParameter("paterno");
+        String apellido_materno = request.getParameter("materno");
+        String contrasenya = request.getParameter("contrasena");
         BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
-        String hashedPassword = passwordEncoder.encode(password);
+        String hashedPassword = passwordEncoder.encode(contrasenya);
         String passwordConf = request.getParameter("confirm");
         Usuario u = Usuario_db.getUsuario(user);
 
         Usuario us = Usuario_db.getUsuario(usuario);
 
-        if (password.equals(passwordConf)) {
+        if (contrasenya.equals(passwordConf)) {
             if (name != null) {
                 us.setAlias(name);
             }
             if (user != null) {
                 us.setNombre(user);
             }
-            if (lastnameP != null) {
-                us.setApellido_p(lastnameP);
+            if (apellido_paterno != null) {
+                us.setApellido_p(apellido_paterno);
             }
-            if (lastnameM != null) {
-                us.setApellido_m(lastnameM);
+            if (apellido_materno != null) {
+                us.setApellido_m(apellido_materno);
             }
-            if (mail != null) {
-                us.setCorreo(mail);
-            }
-            if (password != null) {
+            if (contrasenya != null) {
                 us.setContrasenya(hashedPassword);
             }
         } else {
