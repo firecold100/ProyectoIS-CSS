@@ -65,7 +65,7 @@
 
 
         
-        <form action="${pageContext.request.contextPath}/registro" method="get" class="form-signin">
+        <form action="${pageContext.request.contextPath}/registro"   class="form-signin">
                  <button class="btn btn-secondary btn-lg btn-block" type="submit">Registrarse (si no tiene una cuenta)</button>
             </form>
                  

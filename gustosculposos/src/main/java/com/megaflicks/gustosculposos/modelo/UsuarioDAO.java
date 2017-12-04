@@ -77,10 +77,41 @@ public class UsuarioDAO {
             e.printStackTrace(); 
         }
         finally {
-            //cerramos simpre la sesion
+            //cerramos siempre la sesion
             session.close();
         }
     }
+    
+    
+    
+    
+    /**
+     * Actualiza el usuario en la base de datos
+     * @param usuario con los nuevos valores 
+     */
+    public void actualizar(Usuario usuario) {
+        Session session = sessionFactory.openSession();
+        //la transaccion a relizar
+        Transaction tx = null;
+        try {
+            tx = session.beginTransaction();
+            //actualizar el usuario
+            session.update(usuario);
+           
+            tx.commit();
+        }
+        catch (Exception e) {
+            //Se regresa a un estado consistente 
+            if (tx!=null){ 
+                tx.rollback();
+            }
+            e.printStackTrace(); 
+        }
+        finally {
+            //cerramos siempre la sesion
+            session.close();
+        }
+}
     
     
         /**

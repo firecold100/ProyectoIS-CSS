@@ -29,19 +29,18 @@
         <title>Eliminar Perfil</title>
     </head>
     <body>
-        
-                <div class="container">
-	<div class="row">
-              <form action="${pageContext.request.contextPath}/eliminarUsuario" method="GET">
-     <h2 class="titulo">¿Estas seguro de borrar tu perfil?</h2>
-     
- 
-     <li><button type="button" class="btn btn-primary btn-lg active">Eliminar</button></li>
-   </form>
-   <form action="${pageContext.request.contextPath}/cancelarEliminar" method="GET">
-<button type="button" class="btn btn-default btn-lg active">Quedarse!!</button>
-</form>
-
+       
+        <font size=10 color="red"> ¿Estás seguro de eliminar cuenta?</font>
+        <div>
+                <form action="${pageContext.request.contextPath}/sesion/eliminarUsuario" method="get" class="form-signin">
+                 <button class="btn btn-secondary btn-lg btn-block" type="submit">Eliminar</button>
+            </form>
+<form action="${pageContext.request.contextPath}/sesion/cancelarEliminar" method="get" class="form-signin">
+                 <button class="btn btn-secondary btn-lg btn-block" type="submit">Regresar</button>
+            </form>
+        </div>
+    
+    
     </body>
 </html>
 

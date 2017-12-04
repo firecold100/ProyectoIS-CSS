@@ -149,7 +149,7 @@ public class GustosCulpososDAO {
             tx = s.beginTransaction();
             String hql = "FROM Gustos WHERE ID_GUSTO = :  ID_GUSTO";                  
             Query query = s.createQuery(hql);
-            query.setParameter("id",id);
+            query.setParameter("ID_GUSTO",id);
             result = (GustosCulposos)query.uniqueResult();
             tx.commit();
         }catch(Exception e){
@@ -162,5 +162,14 @@ public class GustosCulpososDAO {
         
         return result;
     }
+    
+    
+    
+        /**
+     * Regresa la lista de todos los Gustos en la base de datos
+     * @return la lista que contiene a todos los gustos de la base de datos
+     */
+
+
     
 }

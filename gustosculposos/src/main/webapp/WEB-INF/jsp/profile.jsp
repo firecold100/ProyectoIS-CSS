@@ -37,19 +37,24 @@
 
         <div class="icon-bar">
             <a class="active" href="#"><i class="fa fa-home"></i></a>
-            <form action="${pageContext.request.contextPath}/buscarUsuario" method="get"  > 
+            <form action="${pageContext.request.contextPath}/buscarUsuario"   > 
                 <a  ><button id="button"  class="fa fa-search"   > </button ></a>    
             </form>
 
             <form action="${pageContext.request.contextPath}/logout"   > 
                 <a  > <button id ="button" class="fa fa-user-o" aria-hidden="true"></button></a>
-                  </form>
-                
-                <form action="${pageContext.request.contextPath}/confirmacionElimina" method="GET">
-                    <a  ><button id="button"  class="fa fa-trash"   > </button ></a>  
-                    
-                  </form>
-         
+            </form>
+
+            <form action="${pageContext.request.contextPath}/sesion/confirmacionElimina" >
+                <a  ><button id="button"  class="fa fa-trash"   > </button ></a>  
+
+            </form>
+
+
+            <form action="${pageContext.request.contextPath}/editarperfil"   > 
+                <a  > <button id ="button" class="fa fa-user-o" aria-hidden="true"></button></a>
+            </form>
+
 
 
 
@@ -69,17 +74,15 @@
 
                     <h3>Bienvenido!  ${nombre} </h3>
                     <h4 style="color:#A9ABA6"> ${correo}</h4>
+                     <h3 class="section-heading">Tus gustos son: </h3>
                 </div>
             </div>
-            <form >
-                <!--<form class="" method="post" action="#">-->
 
-
-                <div class="checkbox">
-                </div>
-
-
-            </form>
+            <script type="text/javascript">var m = "${m}";</script>
+            <script type="text/javascript">var j = "${j}";</script>
+            <script type="text/javascript">var d = "${d}";</script>
+            <script type="text/javascript">var l = "${l}";</script>
+            <script type="text/javascript">var p = "${p}";</script>
 
         </div>  
 

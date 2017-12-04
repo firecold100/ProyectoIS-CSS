@@ -25,7 +25,7 @@ public class GustosCulposos {
     @Column(name = "ID_GUSTO")
     private int  ID_GUSTO;
     @Column(name = "gusto")
-    private String Gusto;
+    private String gustoCulposos;
     @ManyToOne
     @JoinColumn(name = "ID_USUARIO")
     private Usuario ID_USUARIO;
@@ -34,17 +34,20 @@ public class GustosCulposos {
         return ID_GUSTO;
     }
 
+    public String getGustoCulposos() {
+        return gustoCulposos;
+    }
+
+    public void setGustoCulposos(String gustoCulposos) {
+        this.gustoCulposos = gustoCulposos;
+    }
+    
+    
+
     public void setID_GUSTO(int ID_GUSTO) {
         this.ID_GUSTO = ID_GUSTO;
     }
 
-    public String getGusto() {
-        return Gusto;
-    }
-
-    public void setGusto(String Gusto) {
-        this.Gusto = Gusto;
-    }
 
     public int getID_USUARIO() {
          return this.ID_USUARIO.getID_USUARIO();
