@@ -5,8 +5,6 @@
  */
 package com.megaflicks.gustosculposos.controlador;
 
-
-
 import com.megaflicks.gustosculposos.mapeobd.Usuario;
 import com.megaflicks.gustosculposos.mapeobd.GustosCulposos;
 import com.megaflicks.gustosculposos.modelo.GustosCulpososDAO;
