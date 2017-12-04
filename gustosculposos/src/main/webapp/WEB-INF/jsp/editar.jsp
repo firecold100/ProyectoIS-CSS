@@ -54,7 +54,7 @@
                             <input type="text" class="form-control" id="email" name="email" placeholder="Email" value=${correo}>
                         </div>
                         <div class="form-group">
-                            <input type="text" class="form-control" id="usuario" name="usuario" placeholder="Nombre de Usuario" value=${usuario} readonly>
+                            <input type="text" class="form-control" id="usuario" name="usuario" placeholder="Nombre de Usuario" value=${usuario} >
                         </div>
                         <div class="form-group">
                             <input type="password" class="form-control" id="contrasena" name="contrasena" placeholder="Contrasena">
