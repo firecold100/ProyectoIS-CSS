@@ -98,7 +98,7 @@ public class Controlador {
         String libro = request.getParameter("libros");
         String pelicula = request.getParameter("peliculas");
         String videojuegos = request.getParameter("video");
-        String sports = request.getParameter("deportes");
+        String deportes = request.getParameter("deportes");
        
         if (musica != null && musica.equals("on")) {
             GustosCulposos  g = new GustosCulposos();
@@ -126,9 +126,9 @@ public class Controlador {
             g4.setID_USUARIO(us);
             Gustos_db.guardar(g4);
         }
-          if (sports != null && sports.equals("on")) {
+          if (!deportes.equalsIgnoreCase("")) {
             GustosCulposos  g5= new GustosCulposos();
-            g5.setGustoCulposos("Deportes");
+            g5.setGustoCulposos(deportes);
             g5.setID_USUARIO(us);
             Gustos_db.guardar(g5);
         }

@@ -33,11 +33,15 @@
         <div class="container">
             <div class="row main">
                 <div class="main-login main-center">
-                    <h5>Tus gustos culposos son:</h5>
+            
+                
+                    
                     <form action="${pageContext.request.contextPath}/registrarGustos"  method="POST">
                         <!--<form class="" method="post" action="#">-->
                         <input type="text" value="${correo } " name="correo" />
                         <tag type="text" value="${correo } " name="correo" /> 
+                        
+                        <h5>Tus gustos culposos son:</h5>
                         <div class="checkbox">
                             <label><input type="checkbox"  name="musica">Música</label>
                         </div>
@@ -50,23 +54,30 @@
                             <label><input type="checkbox" name="peliculas">Películas</label>
                         </div>
                                               <div class="checkbox">
-  <label><input type="checkbox" name="video">Video Juegos</label>
-</div>
+                            <label><input type="checkbox" name="video">Video Juegos</label>
+                          </div>
                         
-                                                                      <div class="checkbox">
-  <label><input type="checkbox" name="deportes">Deportes</label>
-</div>
+                        <div class="form-group">
+                            <label for="name" class="cols-sm-2 control-label">Gusto libre:</label>
+                            <div class="cols-sm-4">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></span>
+                                    <input type="text" class="form-control" name="deportes" id="deportes"  placeholder="Jugar Canicas" required/>
+                                </div>
+                            </div>
+                        </div>
 
 
 
                         <div class="form-group ">
-                            <button id="button"  class="btn btn-primary btn-lg btn-block login-button">Guardalos</button>
+                            <button id="button"  class="btn btn-primary btn-lg btn-block login-button">Guárdalos</button>
                         </div>
 
 
                     </form>
                 </div>
             </div>
+            
         </div>
     </body>
 </html>
