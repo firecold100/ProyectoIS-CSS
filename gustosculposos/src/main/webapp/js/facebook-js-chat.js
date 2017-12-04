@@ -105,16 +105,18 @@ function register_popup(id, name){
         }
     }
     // Si no está registrado, creamos un nuevo elemento.
+    var idUl = 'ul_'+id+"_"+name;
+    var idInput = 'input_'+id+"_"+name;
     var element = '<div class="popup-box chat-popup" id="'+ id +'">';
                 element += '<div class="popup-head">';
                 element += '<div class="popup-head-left">'+ name +'</div>';
                 element += '<div class="popup-head-right"><a href="javascript:close_popup(\''+ id +'\');">&#10005;</a></div>'; //El link es el tache
-                element += '<div style="clear: both"></div></div><div class="popup-messages">'+getChatBox()+'</div></div>';
+                element += '<div style="clear: both"></div></div><div class="popup-messages">'+getChatBox(idUl, idInput)+'</div></div>';
                 
     
     //Ponemos el elementos la etiquega body. Esto no está tan bien en general pero es para probar
     document.getElementsByTagName("body")[0].innerHTML = document.getElementsByTagName("body")[0].innerHTML + element;
-    assignFunction("textoTipeado");
+    assignFunction(idInput,idUl);
     popups.unshift(id); //Ponemos el id al inicio del arreglo.
     calculate_popups(); //Calculamos los popups.
 }
@@ -138,17 +140,19 @@ function calculate_popups(){
 /**
  * Función que regresa un div chat-box (cadena html) para agregar dentro de 
  * popup-messages.
+ * @param {String} idUl El id de la lista desordenada en donde mostrar los mensajes
+ * @param {String} idInput El id del input del chatbox
  * @return {String} Una cadena con el div
  */
-function getChatBox(){
+function getChatBox(idUl, idInput){
     var box ='<div id="chat-box" class="frame">'
             +'<div>'
-                +'<ul id="mensajes" class="scroll"></ul><!--Lista desordenada de mensajes-->'
+                +'<ul id="'+idUl+'" class="scroll"></ul><!--Lista desordenada de mensajes-->'
             +'</div>'
             +'<div>'
                 +'<div class="msj-rta macro" style="margin:auto">'
                     +'<div class="text text-r" style="background:whitesmoke !important">'
-                        +'<input id="textoTipeado" class="mytext" placeholder="Type a message"/>'
+                        +'<input id="'+idInput+'" class="mytext" placeholder="Escribe un mensaje"/>'
                     +'</div>'
                 +'</div>'
             +'</div>'
@@ -160,14 +164,15 @@ function getChatBox(){
  * Función que asigna al elemento con id determinado
  * un "escucha" para que pueda ingresar los mensajes a la ventana de chat.
  * Agarra el texto y "lo envía"
- * @param {type} id
+ * @param {type} idInput El id del input
+ * @param {String} idUl El id de la lista desordenada en donde van los mensajes
  */
-function assignFunction(id){
-$("#"+id).keypress( function(e){
+function assignFunction(idInput, idUl){
+$("#"+idInput).keypress( function(e){
     if (e.which === 13){ //Si la tecla que presionó es "enter" entonces...
         var text = $(this).val(); //Obtenemos el texto
         if (text !== ""){ //Si el texto no es vacío
-            insertChat("me", text);// Insertamos en el chat
+            insertChat("me", text, idUl);// Insertamos en el chat
             $(this).val(''); //Borramos lo que el usuario escribió
         }
     }
