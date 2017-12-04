@@ -61,14 +61,12 @@ public class ControladorIniciarSesion {
         List<String> gustosLista = new LinkedList();
         model.addAttribute("username", u);
         model.addAttribute("correo", usuario.getCorreo());
-          model.addAttribute("nombre", usuario.getNombre());
-           for(GustosCulposos g :gustos){
+        model.addAttribute("nombre", usuario.getNombre());
+        for(GustosCulposos g :gustos){
             System.out.println(gustosLista.add(g.getGustoCulposos()));
-}
-     
-
-              
-                    
+        }
+        model.addAttribute("gustosLista",gustosLista);
+        model.addAttribute(gustos);
         return new ModelAndView("profile", model);
 
     }
