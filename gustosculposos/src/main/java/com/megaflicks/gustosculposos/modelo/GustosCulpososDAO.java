@@ -111,6 +111,31 @@ public class GustosCulpososDAO {
         }
     }
     
+        /**
+     * Regresa la lista de todos los Gustos en la base de datos
+     * @return la lista que contiene a todos los gustos de la base de datos
+     */
+    public List<GustosCulposos> getGustos(){
+        List<GustosCulposos> result= null;
+        Session session = sessionFactory.openSession();
+        Transaction tx=null;
+        try{
+            tx=session.beginTransaction();
+            String hql= "FROM Gustos";
+            Query query =session.createQuery(hql);
+            result=(List<GustosCulposos>)query.list();
+            tx.commit();
+        }catch (Exception e){
+            if(tx != null)
+                tx.rollback();
+            e.printStackTrace();      
+        }finally{
+            session.close();
+        }
+        return result;
+    }
+
+    
     /**
      * Regresa la lista de todos los Gustos en la base de datos
      * @return la lista que contiene a todos los gustos de la base de datos
@@ -121,7 +146,7 @@ public class GustosCulpososDAO {
         Transaction tx=null;
         try{
             tx=session.beginTransaction();
-            String hql= "FROM GustosCulposos WHERE ID_USUARIO:=ID_USUARIO";
+            String hql= "FROM  GustosCulposos WHERE ID_USUARIO = :ID_USUARIO";
             Query query =session.createQuery(hql);
             query.setParameter("ID_USUARIO",u);
             result=(List<GustosCulposos>)query.list();
@@ -147,7 +172,7 @@ public class GustosCulpososDAO {
         Transaction tx = null;
         try{
             tx = s.beginTransaction();
-            String hql = "FROM Gustos WHERE ID_GUSTO = :  ID_GUSTO";                  
+            String hql = "FROM gustosculposos  WHERE ID_GUSTO = :  ID_GUSTO";                  
             Query query = s.createQuery(hql);
             query.setParameter("ID_GUSTO",id);
             result = (GustosCulposos)query.uniqueResult();
