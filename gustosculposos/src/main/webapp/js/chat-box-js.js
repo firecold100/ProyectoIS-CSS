@@ -14,12 +14,10 @@
  *  Función que carga cuando el DOM se encuentra completamente cargado y listo
  */
 $(document).ready(function(){
-    
-        
-});
 
 //Función que agarra el texto tipeado u lo inserta en el chat localmente sin guardarlo en la base de datos.
-$(".textoTipeado").keypress( function(e){ 
+$("#textoTipeado").keypress( function(e){
+    console.log("chat-box-js.js");
     if (e.which === 13){
         var text = $(this).val();
         if (text !== ""){
@@ -28,6 +26,10 @@ $(".textoTipeado").keypress( function(e){
         }
     }
 });
+        
+});
+
+
 
 var me = {};
 me.avatar = "https://lh6.googleusercontent.com/-lr2nyjhhjXw/AAAAAAAAAAI/AAAAAAAARmE/MdtfUmC0M4s/photo.jpg?sz=48";

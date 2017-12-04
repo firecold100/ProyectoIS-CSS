@@ -114,6 +114,7 @@ function register_popup(id, name){
     
     //Ponemos el elementos la etiquega body. Esto no está tan bien en general pero es para probar
     document.getElementsByTagName("body")[0].innerHTML = document.getElementsByTagName("body")[0].innerHTML + element;
+    assignFunction("textoTipeado");
     popups.unshift(id); //Ponemos el id al inicio del arreglo.
     calculate_popups(); //Calculamos los popups.
 }
@@ -153,4 +154,22 @@ function getChatBox(){
             +'</div>'
         +'</div>';
     return box;
+}
+
+/**
+ * Función que asigna al elemento con id determinado
+ * un "escucha" para que pueda ingresar los mensajes a la ventana de chat.
+ * Agarra el texto y "lo envía"
+ * @param {type} id
+ */
+function assignFunction(id){
+$("#"+id).keypress( function(e){
+    if (e.which === 13){ //Si la tecla que presionó es "enter" entonces...
+        var text = $(this).val(); //Obtenemos el texto
+        if (text !== ""){ //Si el texto no es vacío
+            insertChat("me", text);// Insertamos en el chat
+            $(this).val(''); //Borramos lo que el usuario escribió
+        }
+    }
+});
 }

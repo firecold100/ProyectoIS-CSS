@@ -49,10 +49,14 @@ and open the template in the editor.
     margin-top:5px;width:85%;border-radius:5px;padding:5px;display:flex;
 }
 .msj-rta{
-    float:right;background:whitesmoke;
+    float:right;
+    background:whitesmoke;
+    margin-right: 15px;
 }
 .msj{
-    float:left;background:white;
+    float:left;
+    background:white;
+    margin-left: -10px;
 }
 .frame{
     background:#e0e0de;
@@ -103,7 +107,7 @@ ul {
 }  
 input:focus{
     outline: none;
-}        
+}
 ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
     color: #d4d4d4;
 }
