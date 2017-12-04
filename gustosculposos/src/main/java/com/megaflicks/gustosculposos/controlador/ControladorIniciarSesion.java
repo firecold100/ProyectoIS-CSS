@@ -58,11 +58,16 @@ public class ControladorIniciarSesion {
         String u = principal.getName();
         Usuario usuario = Usuario_db.getUsuario(u);
         List<GustosCulposos> gustos = Gustos_db.getGustos(usuario);
-       
+        List<String> gustosLista = new LinkedList();
         model.addAttribute("username", u);
         model.addAttribute("correo", usuario.getCorreo());
           model.addAttribute("nombre", usuario.getNombre());
+           for(GustosCulposos g :gustos){
+            System.out.println(gustosLista.add(g.getGustoCulposos()));
+}
+     
 
+              
                     
         return new ModelAndView("profile", model);
 

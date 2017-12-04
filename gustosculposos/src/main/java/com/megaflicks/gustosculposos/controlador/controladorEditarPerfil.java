@@ -30,16 +30,34 @@ public class controladorEditarPerfil {
     @Autowired
     GustosCulpososDAO Gustos_db;
 
-    @RequestMapping(value = "/editarperfil", method = RequestMethod.GET)
+   
+
+    @RequestMapping(value = "/editar", method = RequestMethod.GET)
+    public ModelAndView confirmacion(HttpServletRequest request, Principal principal, ModelMap model) {
+        String usuario = principal.getName();
+        Usuario us = Usuario_db.getUsuario(usuario);
+
+        model.addAttribute("nombre_", us.getNombre());
+        model.addAttribute("paterno", us.getApellido_p());
+        model.addAttribute("materno", us.getApellido_m());
+        model.addAttribute("email", us.getCorreo());
+        model.addAttribute("alias_", us.getAlias());
+        return new ModelAndView("editar", model);
+
+    }
+    
+    
+    
+     @RequestMapping(value = "/editarUsuario", method = RequestMethod.POST)
     public String ingresar(HttpServletRequest request, Principal principal) {
         String usuario = principal.getName();
 
-        String name = request.getParameter("alias");
-        String user = request.getParameter("nombre");
-        String lastnameP = request.getParameter("apellido_p");
-        String lastnameM = request.getParameter("apellido_m");
-        String mail = request.getParameter("correo");
-        String password = request.getParameter("contrasenya");
+        String name = request.getParameter("usuario");
+        String user = request.getParameter("name");
+        String lastnameP = request.getParameter("paterno");
+        String lastnameM = request.getParameter("materno");
+        String mail = request.getParameter("email");
+        String password = request.getParameter("contrasena");
         BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
         String hashedPassword = passwordEncoder.encode(password);
         String passwordConf = request.getParameter("confirm");
@@ -66,14 +84,13 @@ public class controladorEditarPerfil {
             if (password != null) {
                 us.setContrasenya(hashedPassword);
             }
-            } else {
-                return "redirect:/actualizarP";
-            }
-
-            Usuario_db.actualizar(us);
-
-            return "redirect:/sesion/inicioU";
-
+        } else {
+            return "redirect:/editar";
         }
-    
+
+        Usuario_db.actualizar(us);
+
+        return "redirect:/sesion/inicioU";
+
+    }
 }

@@ -1,0 +1,40 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 03-dic-2017, 23:13:33
+    Author     : hectorsama
+*/
+body {
+    background-image: url('ciudad.jpg');
+    background-size: 100%;
+    
+}
+.red{
+    color:red;
+    }
+.form-area
+{
+    background-color: rgba(232, 231, 231, 0.52);
+	padding: 10px 40px 60px;
+	margin: 0 auto;
+        position: relative;
+	border: 1px solid GREY;
+	}
+
+        .container {
+            margin: 0 auto;
+            
+            width: 400px;
+            padding: 0;
+            position: relative;
+        }
+        
+        .col-md-5 {
+           margin: 0 auto;
+           width: 400px;
+           
+           position: relative;
+}

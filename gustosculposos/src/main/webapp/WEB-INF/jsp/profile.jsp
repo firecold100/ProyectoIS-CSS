@@ -51,7 +51,7 @@
             </form>
 
 
-            <form action="${pageContext.request.contextPath}/editarperfil"   > 
+            <form action="${pageContext.request.contextPath}/editar"   > 
                 <a  > <button id ="button" class="fa fa-user-o" aria-hidden="true"></button></a>
             </form>
 
@@ -75,14 +75,15 @@
                     <h3>Bienvenido!  ${nombre} </h3>
                     <h4 style="color:#A9ABA6"> ${correo}</h4>
                      <h3 class="section-heading">Tus gustos son: </h3>
-                </div>
-            </div>
-
-            <script type="text/javascript">var m = "${m}";</script>
+                                 <script type="text/javascript">var m = "${m}";</script>
             <script type="text/javascript">var j = "${j}";</script>
             <script type="text/javascript">var d = "${d}";</script>
             <script type="text/javascript">var l = "${l}";</script>
             <script type="text/javascript">var p = "${p}";</script>
+                </div>
+            </div>
+
+
 
         </div>  
 
