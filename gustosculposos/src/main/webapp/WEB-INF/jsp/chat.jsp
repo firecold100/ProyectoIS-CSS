@@ -24,6 +24,8 @@
         <script type="text/javascript"
                 src="<c:url value="/bootstrap-3.3.7/js/bootstrap.min.js"/>" defer>
         </script>
+        <!-- CSS de bootstrap -->
+        <link rel="stylesheet" href="<c:url value="/bootstrap-3.3.7/css/bootstrap.min.css"/>"/>
         <!--Script para hacer que se parezca al chat de facebook-->
         <script type="text/javascript"
                 src="<c:url value="/js/facebook-js-chat.js" />" defer>
@@ -34,8 +36,6 @@
         </script>
         <!-- Archivo CSS -->
         <link rel="stylesheet" href="<c:url value="/css/chat.css"/>"/>
-        <!-- CSS de bootstrap -->
-        <link rel="stylesheet" href="<c:url value="/bootstrap-3.3.7/css/bootstrap.min.css"/>"/>
         <!--font-awesome local-->
         <link rel="stylesheet" href="<c:url value="/css/font-awesome/css/font-awesome.min.css"/>"/>
     </head>

@@ -143,7 +143,7 @@ function calculate_popups(){
 function getChatBox(){
     var box ='<div id="chat-box" class="frame">'
             +'<div>'
-                +'<ul id="mensajes"></ul><!--Lista desordenada de mensajes-->'
+                +'<ul id="mensajes" class="scroll"></ul><!--Lista desordenada de mensajes-->'
             +'</div>'
             +'<div>'
                 +'<div class="msj-rta macro" style="margin:auto">'

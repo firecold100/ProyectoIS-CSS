@@ -51,7 +51,7 @@ and open the template in the editor.
 .msj-rta{
     float:right;
     background:whitesmoke;
-    margin-right: 15px;
+    margin-right: -9px;
 }
 .msj{
     float:left;
@@ -107,6 +107,12 @@ ul {
 }  
 input:focus{
     outline: none;
+}
+
+.scroll {
+    overflow-y: auto;
+    max-width:292px;
+    max-height:202px;
 }
 ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
     color: #d4d4d4;
