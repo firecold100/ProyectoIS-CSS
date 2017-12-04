@@ -29,14 +29,11 @@ $("#textoTipeado").keypress( function(e){
         
 });
 
-
-
-var me = {};
-me.avatar = "https://lh6.googleusercontent.com/-lr2nyjhhjXw/AAAAAAAAAAI/AAAAAAAARmE/MdtfUmC0M4s/photo.jpg?sz=48";
-
-var you = {};
-you.avatar = "https://a11.t26.net/taringa/avatares/9/1/2/F/7/8/Demon_King1/48x48_5C5.jpg";
-
+/**
+ * Función que regresa la hora formateada para el mensaje.
+ * @param {type} date El objeto que contiene la fecha de hoy
+ * @return {String} Una cadena con la fecha formateada
+ */
 function formatAMPM(date) {
     var hours = date.getHours();
     var minutes = date.getMinutes();
@@ -49,15 +46,17 @@ function formatAMPM(date) {
 }            
 
 //-- No use time. It is a javaScript effect.
-function insertChat(who, text, time = 0){
+
+function insertChat(who, text, idUl, time = 0){
     var control = "";
     var date = formatAMPM(new Date());
+    var loc = $(location).attr('host');
     
     if (who === "me"){
         
         control = '<li style="width:100%">' +
                         '<div class="msj macro">' +
-                        '<div class="avatar"><img class="img-circle" style="width:100%;" src="'+ me.avatar +'" /></div>' +
+                        '<div class="avatar"><img class="img-circle" style="width:100%;" src="http://'+loc+'/gustosculposos/img/avatar.png" /></div>' +
                             '<div class="text text-l">' +
                                 '<p>'+ text +'</p>' +
                                 '<p><small>'+date+'</small></p>' +
@@ -71,12 +70,12 @@ function insertChat(who, text, time = 0){
                                 '<p>'+text+'</p>' +
                                 '<p><small>'+date+'</small></p>' +
                             '</div>' +
-                        '<div class="avatar" style="padding:0px 0px 0px 10px !important"><img class="img-circle" style="width:100%;" src="'+you.avatar+'" /></div>' +                                
+                        '<div class="avatar" style="padding:0px 0px 0px 10px !important"><img class="img-circle" style="width:100%;" src="http://'+loc+'/gustosculposos/img/avatar.png" /></div>' +                                
                   '</li>';
     }
     setTimeout(
         function(){                        
-            $("#mensajes").append(control);
+            $("#"+idUl).append(control);
 
         }, time);
     
