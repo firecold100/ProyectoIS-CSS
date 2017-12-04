@@ -42,17 +42,24 @@ hr{
     margin-bottom:25px;
     margin-top:50px;
 
+   
+    padding: 10px;
 }
+
 
 .login_title{
     font-family: "myriad-pro",sans-serif;
     font-style: normal;
     font-weight: 100;
-    color:rgba(164, 164, 164, 0.44);
+    
 }
 
 .card-container.card {
     max-width: 350px;
+    z-index: 2;
+    position: absolute;
+    left: 35px;
+    top: 150px;
 
 }
 
@@ -183,4 +190,11 @@ hr{
 .forgot-password:active,
 .forgot-password:focus{
     color: rgb(12, 97, 33);
+}
+
+#word-cloud{
+    height: 100vh;
+    width: 100vw;
+    margin: 0 auto;
+     z-index: 1;
 }
