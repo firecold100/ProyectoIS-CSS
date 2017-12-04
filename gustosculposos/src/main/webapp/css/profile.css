@@ -23,7 +23,14 @@
     background-color: #05b9f3; /* Add an active/current color */
 } 
 
-
+.icon-bar button {
+    background-color: Transparent;
+    background-repeat:no-repeat;
+    border: none;
+    cursor:pointer;
+    overflow: hidden;
+    outline:none;
+}
 
 
 

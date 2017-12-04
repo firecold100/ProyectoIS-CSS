@@ -41,10 +41,6 @@
                 <a  ><button id="button"  class="fa fa-search"   > </button ></a>    
             </form>
 
-            <form action="${pageContext.request.contextPath}/logout"   > 
-                <a  > <button id ="button" class="fa fa-user-o" aria-hidden="true"></button></a>
-            </form>
-
             <form action="${pageContext.request.contextPath}/sesion/confirmacionElimina" >
                 <a  ><button id="button"  class="fa fa-trash"   > </button ></a>  
 
@@ -54,7 +50,10 @@
             <form action="${pageContext.request.contextPath}/editar"   > 
                 <a  > <button id ="button" class="fa fa-user-o" aria-hidden="true"></button></a>
             </form>
-
+            
+            <form action="${pageContext.request.contextPath}/logout"   > 
+                <a  > <button id ="button" class="fa fa-times" aria-hidden="true"></button></a>
+            </form>
 
 
 

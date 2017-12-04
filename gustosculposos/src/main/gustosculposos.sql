@@ -13,16 +13,17 @@ create table usuario(
      contrasenya VARCHAR(150)  NULL,
      sexo VARCHAR(150) null,
      edad VARCHAR(150) null,
+     rol varchar(25) null,
      constraint pk_usuario PRIMARY KEY (ID_USUARIO)
 );
 
 create table gustosculposos(
-	ID_GUSTO MEDIUMINT not null,
+	ID_GUSTO int NOT NULL AUTO_INCREMENT,
 	ID_USUARIO MEDIUMINT not null,
 	gusto varchar(250) not null,
     constraint fk_gusto_usuario foreign key(ID_USUARIO)
 	references usuario(ID_USUARIO),
-	constraint pk_usuario PRIMARY KEY (ID_GUSTO)
+	constraint pk_gusto PRIMARY KEY (ID_GUSTO)
 );
 
 create table mensajes(
